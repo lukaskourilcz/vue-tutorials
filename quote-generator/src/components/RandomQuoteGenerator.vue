@@ -75,7 +75,7 @@ h1 {
 }
 
 blockquote {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 cite {
@@ -83,5 +83,4 @@ cite {
   justify-content: flex-end;
   padding-right: 10px;
 }
-
 </style>
