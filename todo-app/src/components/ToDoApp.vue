@@ -18,7 +18,7 @@ const removeTask = (index) => {
 
 <template>
   <div class="todo-app">
-    <div class="task-input">
+    <div class="input-field">
       <input
         v-model="newTask"
         @keyup.enter="addTask"
@@ -26,10 +26,10 @@ const removeTask = (index) => {
       />
       <button @click="addTask">Add task</button>
     </div>
-    <ul class="task-list">
-      <li v-for="(task, index) in tasks" key="index" class="task-item">
+    <ul>
+      <li v-for="(task, index) in tasks" :key="index" class="list-item">
         {{ task }}
-        <button @click="removeTask">Remove</button>
+        <button @click="removeTask(index)">Remove task</button>
       </li>
     </ul>
   </div>
@@ -39,25 +39,27 @@ const removeTask = (index) => {
 .todo-app {
   max-width: 400px;
   margin: 50px auto;
-  padding: 20px;
   border: 1px solid;
+  padding: 20px;
 }
 
-.task-input {
+.input-field {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 
 input {
   flex: 1;
 }
 
-.task-list {
+ul {
+  list-style: none;
   padding: 0;
 }
 
-.task-item {
+.list-item {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
 }
 </style>
