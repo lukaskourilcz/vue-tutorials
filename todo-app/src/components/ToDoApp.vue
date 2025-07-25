@@ -7,43 +7,45 @@ const tasks = ref([]);
 const addTask = () => {
   if (newTask.value.trim() !== "") {
     tasks.value.push(newTask.value);
+    console.log("New task list:", tasks.value);
     newTask.value = "";
   }
 };
 
 const removeTask = (index) => {
   tasks.value.splice(index, 1);
+  console.log("New task list:", tasks.value);
 };
 </script>
 
 <template>
-  <div class="todo-app">
-    <div class="input-field">
+  <div class="task-app">
+    <div class="task-input">
       <input
         v-model="newTask"
         @keyup.enter="addTask"
-        placeholder="Write your task"
+        placeholder="write task aqui"
       />
       <button @click="addTask">Add task</button>
     </div>
     <ul>
       <li v-for="(task, index) in tasks" :key="index" class="list-item">
         {{ task }}
-        <button @click="removeTask(index)">Remove task</button>
+        <button @click="removeTask(index)">Remove</button>
       </li>
     </ul>
   </div>
 </template>
 
 <style scoped>
-.todo-app {
+.task-app {
   max-width: 400px;
   margin: 50px auto;
   border: 1px solid;
-  padding: 20px;
+  padding: 10px;
 }
 
-.input-field {
+.task-input {
   display: flex;
   gap: 10px;
 }
@@ -53,13 +55,12 @@ input {
 }
 
 ul {
-  list-style: none;
   padding: 0;
 }
 
 .list-item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 </style>
