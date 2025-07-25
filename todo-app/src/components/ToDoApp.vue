@@ -20,7 +20,11 @@ const removeTask = (index) => {
 </script>
 
 <template>
-
+<div class="todo-app">
+    <div class="task-input">
+        <input v-model="newTask" @keyup.enter="addTask" placeholder="add your task here">
+    </div>
+</div>
 </template>
 
 <style scoped>
