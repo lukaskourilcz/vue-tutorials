@@ -35,4 +35,17 @@ const removeTask = (index) => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+.todo-app {
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+</style>
