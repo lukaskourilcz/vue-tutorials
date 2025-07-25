@@ -32,17 +32,31 @@ const quotes = ref([
   },
 ]);
 
-const currentQuote = ref({text: '', author: ''})
+const currentQuote = ref({ text: "", author: "" });
 
-const getRandmQuote = () => {
-    const randomIndex = Math.floor(Math.random() * quotes.value.length)
-    currentQuote.value = quotes.value[randomIndex]
-}
+const getRandomQuote = () => {
+  const randomIndex = Math.floor(Math.random() * quotes.value.length);
+  currentQuote.value = quotes.value[randomIndex];
+};
 
-onMounted(getRandomQuote)
-
+onMounted(getRandomQuote);
 </script>
 
 <template>
-
+  <div class="quote-generator">
+  <h1 class="app-title">Random Quote Generator</h1>
+  <blockquote class="quote-container">
+    <p>
+      {{ currentQuote.text }}
+    </p>
+    <cite>
+      {{ currentQuote.author }}
+    </cite>
+  </blockquote>
+  </div>
 </template>
+
+
+<style scoped>
+
+</style>
