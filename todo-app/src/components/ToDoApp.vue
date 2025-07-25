@@ -26,7 +26,7 @@ const removeTask = (index) => {
       />
       <button @click="addTask">Add task</button>
     </div>
-    <ul>
+    <ul class="task-list">
       <li v-for="(task, index) in tasks" key="index" class="task-item">
         {{ task }}
         <button @click="removeTask" class="remove-button">Remove</button>
@@ -36,16 +36,59 @@ const removeTask = (index) => {
 </template>
 
 <style scoped>
-
 .todo-app {
-    max-width: 400px;
-    margin: 30px auto;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .task-input {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
 }
 
+input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 8px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.remove-button {
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
 </style>
