@@ -5,11 +5,16 @@ const newTask = ref('')
 const tasks = ref([])
 
 const addTask = () => {
-    if(newTask.value !== ''){
-        newTask.value.trim.push(tasks)
+    if(newTask.value.trim() !== ''){
+        tasks.value.push(newTask.value)
         newTask.value =''
     }
 }
+
+const removeTask = (index) => {
+    tasks.value.splice(index, 1)
+}
+
 
 
 </script>
