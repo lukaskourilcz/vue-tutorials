@@ -20,6 +20,7 @@ const removeTask = (index) => {
 
 <template>
   <div class="task-app">
+    <h1>To Do List</h1>
     <div class="task-input">
       <input
         v-model="newTask"
@@ -44,6 +45,11 @@ const removeTask = (index) => {
   border: 1px solid;
   padding: 10px;
 }
+
+h1 {
+  text-align: center;
+}
+
 
 .task-input {
   display: flex;
