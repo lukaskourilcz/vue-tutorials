@@ -10,7 +10,37 @@ const appendToDisplay = (value) => {
     display.value += value;
   }
 };
+
+const calculate = () => {
+  try {
+    display.value = eval(display.value).toString();
+  } catch (error) {
+    display.value = "error";
+  }
+};
+
+const clearDisplay = () => {
+  display.value = "0";
+};
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- <script setup>
 import { ref, computed } from "vue";
@@ -32,12 +62,6 @@ const calculate = () => {
     display.value = "Error";
   }
 };
-
-// computed property for dynamic class binding
-
-const displayClass = computed(() => {
-  return display.value.length > 12 ? "small-text" : "";
-});
 
 const clearDisplay = () => {
   display.value = "0";
@@ -113,7 +137,4 @@ button {
   margin-top: 10px;
 }
 
-.small-text {
-  font-size: 14px;
-}
 </style> -->
