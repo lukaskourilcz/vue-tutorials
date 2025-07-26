@@ -1,3 +1,6 @@
+// 1. const na newTask, tasks // 2. funkci na addTask a removeTask // 3. html
+skeleton na aplikaci // 4. styling
+
 <script setup>
 import { ref } from "vue";
 
@@ -7,53 +10,47 @@ const tasks = ref([]);
 const addTask = () => {
   if (newTask.value.trim() !== "") {
     tasks.value.push(newTask.value);
-    console.log("New task list:", tasks.value);
+    console.log("tasks:", tasks.value);
     newTask.value = "";
   }
 };
 
 const removeTask = (index) => {
   tasks.value.splice(index, 1);
-  console.log("New task list:", tasks.value);
+  console.log("tasks:", tasks.value);
 };
 </script>
 
 <template>
-  <div class="task-app">
-    <h1>To Do List</h1>
+  <div class="todo-app">
     <div class="task-input">
       <input
         v-model="newTask"
         @keyup.enter="addTask"
-        placeholder="write task aqui"
+        placeholder="write your task here"
       />
       <button @click="addTask">Add task</button>
     </div>
-    <ul>
-      <li v-for="(task, index) in tasks" :key="index" class="list-item">
-        {{ task }}
-        <button @click="removeTask(index)">Remove</button>
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li v-for="(task, index) in tasks" :key="index" class="list-item">
+      {{ task }}
+      <button @click="removeTask(index)">Remove task</button>
+    </li>
+  </ul>
+    </div>
+
 </template>
 
 <style scoped>
-.task-app {
+.todo-app {
   max-width: 400px;
   margin: 50px auto;
+  padding: 20px;
   border: 1px solid;
-  padding: 10px;
 }
-
-h1 {
-  text-align: center;
-}
-
 
 .task-input {
   display: flex;
-  gap: 10px;
 }
 
 input {
@@ -61,12 +58,11 @@ input {
 }
 
 ul {
-  padding: 0;
+  padding: 0
 }
 
 .list-item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
 }
 </style>
