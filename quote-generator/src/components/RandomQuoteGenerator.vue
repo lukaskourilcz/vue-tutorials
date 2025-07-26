@@ -1,3 +1,6 @@
+// 1. Vytvorit consts pro seznam quotes, currentQuote // 2. Vytvorit funkci pro
+random quote // 3. Vytvorit html skeleton // 4. Styling
+
 <script setup>
 import { ref, onMounted } from "vue";
 
@@ -32,55 +35,6 @@ const quotes = ref([
   },
 ]);
 
-const currentQuote = ref({ text: "", author: "" });
 
-const getRandomQuote = () => {
-  const randomIndex = Math.floor(Math.random() * quotes.value.length);
-  currentQuote.value = quotes.value[randomIndex];
-};
 
-onMounted(getRandomQuote);
 </script>
-
-<template>
-  <div class="quote-generator">
-    <h1>Random Quote Generator</h1>
-    <blockquote class="quote-container">
-      <p>
-        {{ currentQuote.text }}
-      </p>
-      <cite>
-        {{ currentQuote.author }}
-      </cite>
-    </blockquote>
-    <button @click="getRandomQuote">Get Random Quote</button>
-  </div>
-</template>
-
-<style scoped>
-.quote-generator {
-  max-width: 400px;
-  margin: 50px auto;
-  border: 1px solid;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-blockquote {
-  margin-bottom: 24px;
-}
-
-cite {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
-</style>
