@@ -24,23 +24,41 @@ const clearDisplay = () => {
 };
 </script>
 
+<template>
+  <div class="calculator-app">
+    <input v-model="display" class="input-field" readonly />
+    <div class="buttons">
+      <button @click="appendToDisplay('7')">7</button>
+      <button @click="appendToDisplay('8')">8</button>
+      <button @click="appendToDisplay('9')">9</button>
+      <button @click="appendToDisplay('/')">/</button>
 
+      <button @click="appendToDisplay('4')">4</button>
+      <button @click="appendToDisplay('5')">5</button>
+      <button @click="appendToDisplay('6')">6</button>
+      <button @click="appendToDisplay('*')">*</button>
 
+      <button @click="appendToDisplay('1')">1</button>
+      <button @click="appendToDisplay('2')">2</button>
+      <button @click="appendToDisplay('3')">3</button>
+      <button @click="appendToDisplay('-')">-</button>
 
+      <button @click="appendToDisplay('0')">0</button>
+      <button @click="appendToDisplay('.')">.</button>
+      <button @click="calculate()">=</button>
+      <button @click="appendToDisplay('+')">+</button>
+    </div>
+  </div>
+</template>
 
+<style scoped>
+.calculator-app {
+  max-width: 400px;
+  margin: 50px auto;
+  border: 1px solid;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+</style>
 
 <!-- <script setup>
 import { ref, computed } from "vue";
@@ -71,7 +89,7 @@ const clearDisplay = () => {
 <template>
   <div>
     <div class="calculator">
-      <input v-model="display" :class="displayClass" readonly />
+      <input v-model="display" class="displayClass" readonly />
       <div class="buttons">
         <button @click="appendToDisplay('7')">7</button>
         <button @click="appendToDisplay('8')">8</button>
