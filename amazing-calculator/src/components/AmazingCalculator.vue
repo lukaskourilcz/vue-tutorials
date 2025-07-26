@@ -4,6 +4,20 @@ import { ref, computed } from "vue";
 const display = ref("0");
 
 const appendToDisplay = (value) => {
+  if (display.value !== 0 && value !== ".") {
+    display.value = value;
+  } else {
+    display.value += value;
+  }
+};
+</script>
+
+<!-- <script setup>
+import { ref, computed } from "vue";
+
+const display = ref("0");
+
+const appendToDisplay = (value) => {
   if (display.value === "0" && value !== ".") {
     display.value = value;
   } else {
@@ -102,4 +116,4 @@ button {
 .small-text {
   font-size: 14px;
 }
-</style>
+</style> -->
