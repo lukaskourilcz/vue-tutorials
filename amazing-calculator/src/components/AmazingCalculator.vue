@@ -4,7 +4,7 @@ import { ref, computed } from "vue";
 const display = ref("0");
 
 const appendToDisplay = (value) => {
-  if (display.value !== 0 && value !== ".") {
+  if (display.value === "0" && value !== ".") {
     display.value = value;
   } else {
     display.value += value;
@@ -26,7 +26,7 @@ const clearDisplay = () => {
 
 <template>
   <div class="calculator-app">
-    <input v-model="display" class="input-field" readonly />
+    <input v-model="display" class="display" readonly />
     <div class="buttons">
       <button @click="appendToDisplay('7')">7</button>
       <button @click="appendToDisplay('8')">8</button>
@@ -48,16 +48,48 @@ const clearDisplay = () => {
       <button @click="calculate()">=</button>
       <button @click="appendToDisplay('+')">+</button>
     </div>
+    <button @click="clearDisplay" class="clear-button">C</button>
   </div>
 </template>
 
 <style scoped>
-.calculator-app {
-  max-width: 400px;
-  margin: 50px auto;
-  border: 1px solid;
+input {
+  padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
+.calculator-app {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.display {
+  width: 75%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.clear-button {
+  width: 100%;
+  margin-top: 10px;
+}
 </style>
 
 <!-- <script setup>
