@@ -35,12 +35,12 @@ const quotes = ref([
   },
 ]);
 
-const currentQuote = ref({text: '', author: ''});
+const currentQuote = ref({ text: "", author: "" });
 
 const getRandomQuote = () => {
   const randomIndex = Math.floor(Math.random() * quotes.value.length);
-  currentQuote.value = quotes.value[randomIndex]
-  console.log("randomQuote:", currentQuote.value);
+  currentQuote.value = quotes.value[randomIndex];
+  console.log("randomQuote:", randomIndex, currentQuote.value);
 };
 
 onMounted(getRandomQuote);
@@ -49,10 +49,10 @@ onMounted(getRandomQuote);
   <div class="quote-app">
     <h1>Random Quote Generator</h1>
     <blockquote>
-      <p>{{ quotes.text }}</p>
-      <cite>{{ quotes.author }}</cite>
+      <p>{{ currentQuote.text }}</p>
+      <cite>{{ currentQuote.author }}</cite>
     </blockquote>
-    <button>Get random quote</button>
+    <button @click="getRandomQuote">Get random quote</button>
   </div>
 </template>
 
@@ -69,5 +69,10 @@ onMounted(getRandomQuote);
 
 h1 {
   text-align: center;
+}
+
+cite {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
