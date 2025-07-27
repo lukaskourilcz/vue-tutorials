@@ -1,9 +1,7 @@
 <script setup>
 import { defineProps } from "vue";
 
-const empit = defineEmits([
-  'transactionDeleted'
-])
+const empit = defineEmits(["transactionDeleted"]);
 
 const props = defineProps({
   transactions: {
@@ -13,9 +11,8 @@ const props = defineProps({
 });
 
 const deleteTransaction = (id) => {
-  empit('transactionDeleted', id)
-}
-
+  empit("transactionDeleted", id);
+};
 </script>
 
 <template>
@@ -28,7 +25,9 @@ const deleteTransaction = (id) => {
     >
       {{ transaction.text }}
       <span>$ {{ transaction.amount }}</span>
-      <button @click="deleteTransaction(transaction.id)" class="delete-btn">x</button>
+      <button @click="deleteTransaction(transaction.id)" class="delete-btn">
+        x
+      </button>
     </li>
   </ul>
 </template>
