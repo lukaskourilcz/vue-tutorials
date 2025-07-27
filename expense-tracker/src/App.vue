@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import AddTransaction from "./components/AddTransaction.vue";
 import Balance from "./components/Balance.vue";
 import Header from "./components/Header.vue";
@@ -8,14 +8,22 @@ import TransactionList from "./components/TransactionList.vue";
 import { useToast } from "vue-toastification";
 
 const transactions = ref([
-  { id: 1, text: "Flower", amount: -9.99 },
-  { id: 2, text: "House key", amount: -1.99 },
-  { id: 3, text: "Car", amount: -1999.99 },
-  { id: 4, text: "Rent", amount: 3800 },
-  { id: 5, text: "Birthday money", amount: 200 },
+  // { id: 1, text: "Flower", amount: -9.99 },
+  // { id: 2, text: "House key", amount: -1.99 },
+  // { id: 3, text: "Car", amount: -1999.99 },
+  // { id: 4, text: "Rent", amount: 3800 },
+  // { id: 5, text: "Birthday money", amount: 200 },
 ]);
 
 const toast = useToast();
+
+onMounted(() => {
+  const savedTransactions = JSON.parse(localStorage.getItem("transactions"));
+
+  if (savedTransactions) {
+    transactions.value = savedTransactions;
+  }
+});
 
 const total = computed(() => {
   return transactions.value.reduce((acc, transaction) => {
@@ -46,19 +54,25 @@ const handleTransactionSubmitted = (transactionData) => {
     amount: transactionData.amount,
   });
 
+  saveTransactionsToLocalStorage();
+
   toast.success("Transaction added, mijo.");
 };
 
 const handleTransactionDeleted = (id) => {
-  const index = transactions.value.findIndex((t) => t.id === id);
-  if (index !== -1) {
-    transactions.value.splice(index, 1);
-    toast.info("Transaction removed, vato.");
-  }
+  transactions.value = transactions.value.filter(
+    (transaction) => transaction.id !== id
+  );
+  saveTransactionsToLocalStorage();
+  toast.info("Transaction removed, vato.");
 };
 
 const generateUniqueId = () => {
   return Math.floor(Math.random() * 1000);
+};
+
+const saveTransactionsToLocalStorage = () => {
+  localStorage.setItem("transactions", JSON.stringify(transactions.value));
 };
 </script>
 
