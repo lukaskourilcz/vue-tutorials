@@ -208,7 +208,6 @@ const questions = ref(
   ])
 );
 
-
 const currentIndex = ref(0);
 const score = ref(0);
 
@@ -228,8 +227,14 @@ const handleAnswer = (wasCorrect) => {
 <template>
   <div class="container mt-5">
     <h1 class="mb-4">Vue & JS Quiz</h1>
-    <p><strong>Skóre:</strong> {{ score }} / {{ questions.length }}</p>
-
+    <div class="mb-3">
+  <span class="badge bg-info fs-5 p-2 me-2">
+    Otázka {{ currentIndex + 1 }} / {{ questions.length }}
+  </span>
+  <span class="badge bg-success fs-5 p-2">
+    Skóre: {{ score }}
+  </span>
+</div>
     <QuizCard :question="questions[currentIndex]" @answered="handleAnswer" />
 
     <button
