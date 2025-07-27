@@ -1,8 +1,28 @@
+<script setup>
+import { ref } from 'vue';
+
+const display = ref('0')
+
+const appendToDisplay = (value) => {
+  if(display === '0' && value !== '.' ){
+    display.value = value
+  } else {
+    display.value += value
+  }
+}
+
+</script>
+
+<template>
 
 
+</template>
 
 
+<style scoped>
 
+
+</style>
 
 
 
