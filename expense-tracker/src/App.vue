@@ -35,14 +35,19 @@ const expense = computed(() => {
       return acc + transaction.amount;
     }, 0);
 });
+
+const handleTransactionSubmitted = (transactionData) => {
+  console.log(transactionData)
+}
+
 </script>
 
 <template>
   <Header />
   <div class="container">
-    <Balance :total="total" />
+    <Balance :total="+total" />
     <IncomeExpenses :income="+income" :expense="+expense" />
     <TransactionList :transactions="transactions" />
-    <AddTransaction />
+    <AddTransaction @transactionSubmitted="handleTransactionSubmitted"/>
   </div>
 </template>
