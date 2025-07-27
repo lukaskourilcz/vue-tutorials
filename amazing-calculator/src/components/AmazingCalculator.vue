@@ -11,39 +11,24 @@ const appendToDisplay = (value) => {
   }
 }
 
+const calculate = () => {
+  try {
+    display.value = eval(display.value).toString()
+  } catch (error){
+    display.value = 'Error'
+  }
+}
+
+
 </script>
 
 <template>
 
-
 </template>
-
 
 <style scoped>
 
-
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
