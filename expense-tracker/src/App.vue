@@ -15,7 +15,7 @@ const transactions = ref([
   { id: 5, text: "Birthday money", amount: 200 },
 ]);
 
-const toast = useToast()
+const toast = useToast();
 
 const total = computed(() => {
   return transactions.value.reduce((acc, transaction) => {
@@ -40,28 +40,37 @@ const expense = computed(() => {
 });
 
 const handleTransactionSubmitted = (transactionData) => {
-
   transactions.value.push({
     id: generateUniqueId(),
-    text:transactionData.text,
-    amount: transactionData.amount
-  })
+    text: transactionData.text,
+    amount: transactionData.amount,
+  });
 
-  toast.success('Transaction addded to the list, mijo.')
-}
+  toast.success("Transaction added, mijo.");
+};
+
+const handleTransactionDeleted = (id) => {
+  const index = transactions.value.findIndex((t) => t.id === id);
+  if (index !== -1) {
+    transactions.value.splice(index, 1);
+    toast.info("Transaction removed, vato.");
+  }
+};
 
 const generateUniqueId = () => {
-  return Math.floor(Math.random()*1000)
-}
- 
+  return Math.floor(Math.random() * 1000);
+};
 </script>
 
 <template>
   <Header />
   <div class="container">
-    <Balance :total="+total" />
-    <IncomeExpenses :income="+income" :expense="+expense" />
-    <TransactionList :transactions="transactions" />
-    <AddTransaction @transactionSubmitted="handleTransactionSubmitted"/>
+    <Balance :total="total" />
+    <IncomeExpenses :income="income" :expense="expense" />
+    <TransactionList
+      :transactions="transactions"
+      @transactionDeleted="handleTransactionDeleted"
+    />
+    <AddTransaction @transactionSubmitted="handleTransactionSubmitted" />
   </div>
 </template>

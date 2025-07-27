@@ -1,12 +1,21 @@
 <script setup>
 import { defineProps } from "vue";
 
+const empit = defineEmits([
+  'transactionDeleted'
+])
+
 const props = defineProps({
   transactions: {
     type: Array,
     required: true,
   },
 });
+
+const deleteTransaction = (id) => {
+  empit('transactionDeleted', id)
+}
+
 </script>
 
 <template>
@@ -19,7 +28,7 @@ const props = defineProps({
     >
       {{ transaction.text }}
       <span>$ {{ transaction.amount }}</span>
-      <button class="delete-btn">x</button>
+      <button @click="deleteTransaction(transaction.id)" class="delete-btn">x</button>
     </li>
   </ul>
 </template>
