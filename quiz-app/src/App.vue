@@ -74,17 +74,6 @@ const questions = ref(
         "`map()` vytvoří nové pole transformací každého prvku originálního pole.",
     },
     {
-      text: "Jak zjistíš délku pole v JS?",
-      options: [
-        "array.count()",
-        "array.length",
-        "array.size",
-        "array.getLength()",
-      ],
-      correct: 1,
-      explanation: `.length je vlastnost, která vrací počet prvků v poli.`,
-    },
-    {
       text: "Která direktiva vykreslí komponentu pouze pokud je podmínka splněná?",
       options: ["v-if", "v-model", "v-bind", "v-for"],
       correct: 0,
@@ -137,13 +126,6 @@ const questions = ref(
       correct: 1,
       explanation:
         "`v-for` opakuje šablonu pro každou položku v iterovatelném seznamu.",
-    },
-    {
-      text: "Co vrátí `typeof null` v JavaScriptu?",
-      options: ["'null'", "'object'", "'undefined'", "'function'"],
-      correct: 1,
-      explanation:
-        "`typeof null` je `'object'`, což je historická chyba v jazyce JavaScript.",
     },
     {
       text: "Jaká je hlavní výhoda `const` oproti `let`?",

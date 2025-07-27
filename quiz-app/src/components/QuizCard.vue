@@ -5,8 +5,7 @@ const props = defineProps({
   question: Object,
 });
 
-const emit = defineEmits(['answered'])
-
+const emit = defineEmits(["answered"]);
 
 const selected = ref(null);
 
@@ -34,13 +33,17 @@ watch(
       <li
         v-for="(option, index) in question.options"
         :key="index"
-        class="list-group-item"
-        :class="{
-          'list-group-item-success':
-            selected !== null && index === question.correct,
-          'list-group-item-danger':
-            selected === index && index !== question.correct,
-        }"
+        class="list-group-item user-select-none"
+        :class="[
+          selected !== null && index === question.correct
+            ? 'list-group-item-success'
+            : '',
+          selected === index && index !== question.correct
+            ? 'list-group-item-danger'
+            : '',
+          selected === null ? 'hoverable-option' : '',
+        ]"
+        :style="{ cursor: selected === null ? 'pointer' : 'default' }"
         @click="selectOption(index)"
       >
         {{ option }}
@@ -53,3 +56,9 @@ watch(
     </div>
   </div>
 </template>
+
+<style scoped>
+.hoverable-option:hover {
+  background-color: #f0f0f0;
+}
+</style>
