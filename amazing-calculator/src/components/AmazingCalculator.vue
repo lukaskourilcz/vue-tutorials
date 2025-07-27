@@ -44,6 +44,61 @@ const clearDisplay = () => {
 };
 </script>
 
-<template></template>
+<template>
+  <div class="calculator">
+    <div class="calc-grid">
+      <input v-model="display" readonly />
+        <button @click="appendToDisplay('7')">7</button>
+        <button @click="appendToDisplay('8')">8</button>
+        <button @click="appendToDisplay('9')">9</button>
+        <button @click="appendToDisplay('/')">/</button>
 
-<style scoped></style>
+        <button @click="appendToDisplay('4')">4</button>
+        <button @click="appendToDisplay('5')">5</button>
+        <button @click="appendToDisplay('6')">6</button>
+        <button @click="appendToDisplay('*')">*</button>
+
+        <button @click="appendToDisplay('1')">1</button>
+        <button @click="appendToDisplay('2')">2</button>
+        <button @click="appendToDisplay('3')">3</button>
+        <button @click="appendToDisplay('-')">-</button>
+
+        <button @click="appendToDisplay('0')">0</button>
+        <button @click="appendToDisplay('.')">.</button>
+        <button @click="calculate()">=</button>
+        <button @click="appendToDisplay('+')">+</button>
+    </div>
+    <button class="clear-button">C</button>
+  </div>
+</template>
+
+<style scoped>
+.calculator {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+input {
+  grid-column: span 4;
+  margin-bottom: 5px;
+  text-align: right;
+  padding: 5px;
+}
+
+button {
+  padding: 5px;
+}
+
+.clear-button {
+  width: 100%;
+  margin-top: 5px;
+}
+</style>
