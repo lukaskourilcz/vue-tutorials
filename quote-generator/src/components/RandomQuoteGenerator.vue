@@ -1,9 +1,6 @@
 // 1. Vytvorit consts pro seznam quotes, currentQuote // 2. Vytvorit funkci pro
 random quote // 3. Vytvorit html skeleton // 4. Styling
 
-<script setup>
-import { ref, onMounted } from "vue";
-
 const quotes = ref([
   {
     text: "Life is what happens when you're busy making other plans.",
@@ -34,45 +31,3 @@ const quotes = ref([
     author: "Oscar Wilde",
   },
 ]);
-
-const currentQuote = ref({ text: "", author: "" });
-
-const getRandomQuote = () => {
-  const randomIndex = Math.floor(Math.random() * quotes.value.length);
-  currentQuote.value = quotes.value[randomIndex];
-  console.log("randomQuote:", randomIndex, currentQuote.value);
-};
-
-onMounted(getRandomQuote);
-</script>
-<template>
-  <div class="quote-app">
-    <h1>Random Quote Generator</h1>
-    <blockquote>
-      <p>{{ currentQuote.text }}</p>
-      <cite>{{ currentQuote.author }}</cite>
-    </blockquote>
-    <button @click="getRandomQuote">Get random quote</button>
-  </div>
-</template>
-
-<style scoped>
-.quote-app {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  text-align: center;
-}
-
-cite {
-  display: flex;
-  justify-content: flex-end;
-}
-</style>
