@@ -6,199 +6,119 @@
     },
     {
       "id": 2,
-      "question": "Co jsou to arrow funkce a jaký je jejich hlavní rozdíl oproti klasickým funkcím (zejména ohledně `this`)?"
-    },
-    {
-      "id": 3,
-      "question": "Popište, co jsou `Promise` a jak řeší asynchronní operace. Uveďte příklad použití `async/await`."
-    },
-    {
-      "id": 4,
-      "question": "Co jsou to dekonstrukční přiřazení (destructuring assignment) v ES6+ a kde je využíváte?"
-    },
-    {
-      "id": 5,
-      "question": "Vysvětlete koncept modulů v ES6 (import/export) a proč jsou důležité."
-    },
-    {
-      "id": 6,
-      "question": "Co je to spread operátor (`...`) a rest parametr (`...`)? Uveďte příklady."
-    },
-    {
-      "id": 7,
-      "question": "Jaký je rozdíl mezi `map()`, `filter()` a `reduce()` metodami na polích?"
-    },
-    {
-      "id": 8,
-      "question": "Co je to `hoisting` v JavaScriptu?"
-    },
-    {
-      "id": 9,
-      "question": "Popište událostní smyčku (event loop) v JavaScriptu a NodeJS. Proč je důležitá pro asynchronní programování?"
-    },
-    {
-      "id": 10,
       "question": "Co je closure a k čemu se používá?"
     },
     {
+      "id": 3,
+      "question": "Co je to `hoisting` v JavaScriptu?"
+    },
+    {
+      "id": 4,
+      "question": "Popište rozdíl mezi `==` a `===` v JavaScriptu."
+    },
+    {
+      "id": 5,
+      "question": "Co jsou to `Promise` a jak řeší asynchronní operace? Uveďte příklad použití `async/await`."
+    },
+    {
+      "id": 6,
+      "question": "Jaký je rozdíl mezi `map()`, `filter()` a `reduce()` metodami na polích?"
+    },
+    {
+      "id": 7,
+      "question": "Popište událostní smyčku (event loop) v JavaScriptu a proč je důležitá pro asynchronní programování."
+    },
+    {
+      "id": 8,
+      "question": "Jaký je rozdíl mezi `null` a `undefined`?"
+    },
+    {
+      "id": 9,
+      "question": "Vysvětlete, co je Node.js a k čemu se nejčastěji používá."
+    },
+    {
+      "id": 10,
+      "question": "Co je to `NPM` a k čemu slouží soubory `package.json` a `package-lock.json`?"
+    },
+    {
       "id": 11,
-      "question": "Vysvětlete, co je NodeJS a k čemu se nejčastěji používá."
+      "question": "Jaký je rozdíl mezi závislostmi (`dependencies`) a vývojovými závislostmi (`devDependencies`)?"
     },
     {
       "id": 12,
-      "question": "Jaký je rozdíl mezi blokujícím a neblokujícím I/O v NodeJS?"
+      "question": "Jak funguje import/export syntaxe v ES6 modulech?"
     },
     {
       "id": 13,
-      "question": "Co je to `NPM` (Node Package Manager) a k čemu slouží soubory `package.json` a `package-lock.json`?"
+      "question": "Jak funguje reaktivita ve Vue.js (např. pomocí `ref` a `reactive`)?"
     },
     {
       "id": 14,
-      "question": "Jak inicializujete nový NodeJS projekt pomocí NPM?"
-    },
-    {
-      "id": 15,
-      "question": "Popište, co jsou závislosti (`dependencies`) a vývojové závislosti (`devDependencies`) v `package.json`."
-    },
-    {
-      "id": 16,
-      "question": "Jak nainstalujete balíček lokálně a globálně pomocí NPM? Kdy použít kterou variantu?"
-    },
-    {
-      "id": 17,
-      "question": "Co je to `middleware` v kontextu Express.js (nebo jiných NodeJS frameworků)?"
-    },
-    {
-      "id": 18,
-      "question": "Jak zpracováváte chyby v NodeJS aplikaci?"
-    },
-    {
-      "id": 19,
-      "question": "Popište, co je to modul `fs` (File System) v NodeJS a uveďte příklad jeho použití."
-    },
-    {
-      "id": 20,
-      "question": "Co jsou to streamy v NodeJS a k čemu se používají?"
-    },
-    {
-      "id": 21,
-      "question": "Vysvětlete základní principy Vue.js (např. reaktivita, komponenty, virtuální DOM)."
-    },
-    {
-      "id": 22,
-      "question": "Jaký je rozdíl mezi Vue 2 a Vue 3 (např. Composition API vs. Options API)?"
-    },
-    {
-      "id": 23,
       "question": "Co je to Composition API ve Vue 3 a jaké jsou jeho výhody?"
     },
     {
-      "id": 24,
-      "question": "Vysvětlete, jak funguje reaktivita ve Vue.js (např. pomocí `ref` a `reactive`)."
+      "id": 15,
+      "question": "Jaký je rozdíl mezi Composition API a Options API ve Vue?"
     },
     {
-      "id": 25,
+      "id": 16,
       "question": "Jak předáváte data mezi komponentami ve Vue.js (props, emit)?"
     },
     {
-      "id": 26,
-      "question": "Co jsou to sloty (slots) ve Vue.js a k čemu se používají?"
-    },
-    {
-      "id": 27,
+      "id": 17,
       "question": "Popište životní cyklus komponenty ve Vue.js (např. `onMounted`, `onUpdated`, `onUnmounted`)."
     },
     {
+      "id": 18,
+      "question": "Jak řešíte routing v SPA aplikacích s Vue Routerem?"
+    },
+    {
+      "id": 19,
+      "question": "K čemu slouží `v-model` ve Vue.js a jak funguje obousměrná vazba?"
+    },
+    {
+      "id": 20,
+      "question": "Co je to `provide/inject` ve Vue.js a kdy to použít místo props?"
+    },
+    {
+      "id": 21,
+      "question": "Jak ve Vue implementujete podmíněné vykreslování (`v-if`, `v-else`, `v-show`)?"
+    },
+    {
+      "id": 22,
+      "question": "Jak fungují sloty (slots) ve Vue a k čemu se hodí?"
+    },
+    {
+      "id": 23,
+      "question": "Jaké jsou hlavní rozdíly mezi Flexboxem a CSS Gridem a kdy použít který?"
+    },
+    {
+      "id": 24,
+      "question": "Popište box model v CSS a rozdíl mezi `box-sizing: content-box` a `box-sizing: border-box`."
+    },
+    {
+      "id": 25,
+      "question": "Jak fungují media queries v CSS a jak je použijete pro responzivní design?"
+    },
+    {
+      "id": 26,
+      "question": "Vysvětlete rozdíl mezi `display: block`, `inline` a `inline-block` v CSS."
+    },
+    {
+      "id": 27,
+      "question": "Jaký je rozdíl mezi absolutním, relativním, fixním a sticky pozicováním v CSS?"
+    },
+    {
       "id": 28,
-      "question": "K čemu slouží `v-model` ve Vue.js?"
+      "question": "Co jsou to CSS proměnné (`--custom-property`) a jak je použít?"
     },
     {
       "id": 29,
-      "question": "Jak řešíte routing v jednostránkových aplikacích (SPA) s Vue.js (např. Vue Router)?"
+      "question": "Jak optimalizovat výkon webu z hlediska HTML/CSS/JS?"
     },
     {
       "id": 30,
-      "question": "Co je to `provide/inject` ve Vue.js a kdy byste to použili namísto props?"
-    },
-    {
-      "id": 31,
-      "question": "Vysvětlete nový sémantický význam HTML5 elementů (např. `<header>`, `<nav>`, `<article>`, `<footer>`). Proč jsou důležité?"
-    },
-    {
-      "id": 32,
-      "question": "Co jsou to Web Storage API (localStorage a sessionStorage)? Jaký je mezi nimi rozdíl a kdy je použijete?"
-    },
-    {
-      "id": 33,
-      "question": "Popište použití a výhody `<canvas>` a `<svg>` elementů v HTML5."
-    },
-    {
-      "id": 34,
-      "question": "Co je to `data-*` atribut v HTML5 a k čemu se používá?"
-    },
-    {
-      "id": 35,
-      "question": "Jaký je význam a použití elementu `<meta viewport>` pro responzivní design?"
-    },
-    {
-      "id": 36,
-      "question": "Co je to Flexbox v CSS3? Vysvětlete jeho základní principy a vlastnosti (např. `display: flex`, `justify-content`, `align-items`)."
-    },
-    {
-      "id": 37,
-      "question": "Co je to CSS Grid? Jaký je jeho hlavní rozdíl oproti Flexboxu a kdy byste použili jeden nebo druhý?"
-    },
-    {
-      "id": 38,
-      "question": "Vysvětlete rozdíl mezi `display: block`, `display: inline` a `display: inline-block`."
-    },
-    {
-      "id": 39,
-      "question": "Co jsou to `rem` a `em` jednotky v CSS? Kdy je použijete a jaký je jejich hlavní rozdíl oproti `px`?"
-    },
-    {
-      "id": 40,
-      "question": "Popište box model v CSS (content, padding, border, margin) a rozdíl mezi `box-sizing: content-box` a `box-sizing: border-box`."
-    },
-    {
-      "id": 41,
-      "question": "Jak fungují CSS selektory a jaká je jejich specificita?"
-    },
-    {
-      "id": 42,
-      "question": "Co jsou to CSS proměnné (Custom Properties) a jak je používáte?"
-    },
-    {
-      "id": 43,
-      "question": "Vysvětlete rozdíl mezi relativním, absolutním, fixním a sticky positioning v CSS."
-    },
-    {
-      "id": 44,
-      "question": "Co jsou to media queries v CSS3 a jak je použijete pro responzivní design?"
-    },
-    {
-      "id": 45,
-      "question": "Jak optimalizujete výkon CSS a HTML?"
-    },
-    {
-      "id": 46,
-      "question": "Co je to SSR (Server-Side Rendering) a SPA (Single Page Application)? Jaké jsou jejich výhody a nevýhody?"
-    },
-    {
-      "id": 47,
-      "question": "Popište základní principy práce s Gitem (commit, push, pull, branch, merge)."
-    },
-    {
-      "id": 48,
-      "question": "Jak byste zabezpečil REST API? (např. CORS, autentizace, sanitizace vstupů)"
-    },
-    {
-      "id": 49,
-      "question": "Co jsou webové komponenty a jak souvisejí s Vue.js nebo jinými frameworky?"
-    },
-    {
-      "id": 50,
-      "question": "Jak byste testoval webovou aplikaci (jednotkové testy, integrační testy, end-to-end testy)?"
+      "question": "Jak byste zabezpečil REST API? (např. CORS, autentizace, validace vstupů)"
     }
   ]
 }

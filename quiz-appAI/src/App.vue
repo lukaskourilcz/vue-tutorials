@@ -100,9 +100,8 @@ const nextQuestion = () => {
   <div class="container mt-5" style="max-width: 700px">
     <h1 class="mb-4">Vue & JS Quiz (AI powered)</h1>
 
-    <!-- Header with question index and score -->
     <div
-      class="d-flex justify-content-between align-items-center mb-2"
+      class="d-flex justify-content-between align-items-center mb-2 mx-3"
       v-if="currentQuestion"
     >
       <strong>Question {{ currentIndex + 1 }} / {{ questions.length }}</strong>
@@ -135,7 +134,7 @@ const nextQuestion = () => {
         role="alert"
       >
         <strong>Score: {{ feedbackScore }}/10</strong><br />
-        {{ feedback }}
+      {{ feedback }}
       </div>
 
       <button
