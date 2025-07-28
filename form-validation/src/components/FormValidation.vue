@@ -8,22 +8,16 @@ const formData = ref({
 });
 
 const isNameValid = computed(() => formData.value.name.trim() !== "");
+
 const isEmailValid = computed(() =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)
 );
+
 const isPasswordValid = computed(() => formData.value.password.length >= 8);
 
 const isFormValid = computed(
   () => isNameValid.value && isEmailValid.value && isPasswordValid.value
 );
-
-const submitForm = () => {
-  if (isFormValid.value) {
-    console.log("Form Submitted", formData.value);
-  } else {
-    console.log("Form is invalid");
-  }
-};
 </script>
 
 <template>
@@ -32,17 +26,17 @@ const submitForm = () => {
       <div class="form-group">
         <label for="name">Name:</label>
         <input v-model="formData.name" type="text" id="name" />
-        <span v-if="!isNameValid" class="error">Name is required</span>
+        <span v-if="!isNameValid.value" class="error">Name is required</span>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
         <input v-model="formData.email" type="email" id="email" />
-        <span v-if="!isEmailValid" class="error">Email is required</span>
+        <span v-if="!isEmailValid.value" class="error">Email is required</span>
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
         <input v-model="formData.password" type="password" id="password" />
-        <span v-if="!isPasswordValid" class="error"
+        <span v-if="!isPasswordValid.value" class="error"
           >Password must be at least 8 characters</span
         >
       </div>
@@ -65,7 +59,6 @@ const submitForm = () => {
 }
 
 label {
-  display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -75,7 +68,6 @@ input {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .error {
@@ -85,12 +77,8 @@ input {
 }
 
 .submit-button {
-  padding: 10px 15px;
+  padding: 15px;
   font-size: 16px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
