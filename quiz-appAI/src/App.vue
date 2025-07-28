@@ -12,9 +12,9 @@ const feedbackScore = ref(0);
 const isLoading = ref(false);
 const showFeedback = ref(false);
 const scoreColor = ref("");
-
 const totalScore = ref(0);
 const answeredCount = ref(0);
+const aiError = ref(false);
 
 const shuffleArray = (array) => {
   const copy = [...array];
@@ -30,7 +30,6 @@ const loadQuestions = async () => {
     const res = await fetch("/questions.json");
     const data = await res.json();
     questions.value = shuffleArray(data.questions);
-
     currentIndex.value = 0;
     currentQuestion.value = questions.value[0];
   } catch (error) {
@@ -52,6 +51,7 @@ const submitAnswer = async () => {
   isLoading.value = true;
   showFeedback.value = false;
   scoreColor.value = "";
+  aiError.value = false; 
 
   try {
     const res = await axios.post("https://quiz-app-backend-1-003c.onrender.com/", {
@@ -64,7 +64,6 @@ const submitAnswer = async () => {
     feedback.value = res.data.feedback;
     feedbackScore.value = score;
     showFeedback.value = true;
-
     totalScore.value += score;
     answeredCount.value += 1;
 
@@ -75,6 +74,7 @@ const submitAnswer = async () => {
     feedback.value =
       "❌ Failed to get AI evaluation. Please check backend connection.";
     showFeedback.value = true;
+    aiError.value = true;
     console.error("API call error:", err);
   } finally {
     isLoading.value = false;
@@ -90,6 +90,7 @@ const nextQuestion = () => {
     feedbackScore.value = 0;
     showFeedback.value = false;
     scoreColor.value = "";
+    aiError.value = false;
   } else {
     currentQuestion.value = null;
   }
@@ -134,7 +135,18 @@ const nextQuestion = () => {
         role="alert"
       >
         <strong>Score: {{ feedbackScore }}/10</strong><br />
-      {{ feedback }}
+        {{ feedback }}
+      </div>
+
+      <div v-if="aiError" class="mt-3">
+        <a
+          href="https://quiz-app-sable-eight-67.vercel.app/"
+          class="btn btn-outline-danger"
+          target="_blank"
+          rel="noopener"
+        >
+          👉 Try version without AI
+        </a>
       </div>
 
       <button
