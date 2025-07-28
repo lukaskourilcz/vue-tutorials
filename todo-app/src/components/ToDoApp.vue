@@ -1,5 +1,5 @@
-// 1. const na newTask, tasks // 2. funkci na addTask a removeTask // 3. html
-skeleton na aplikaci // 4. styling
+// 1. make skeleton, define consts, create functions to additem and to remove
+item,
 
 <script setup>
 import { ref } from "vue";
@@ -7,62 +7,48 @@ import { ref } from "vue";
 const newTask = ref("");
 const tasks = ref([]);
 
-const addTask = () => {
-  if (newTask.value.trim() !== "") {
-    tasks.value.push(newTask.value);
-    console.log("tasks:", tasks.value);
-    newTask.value = "";
+const addItem = () => {
+  if(newTask.value !== ''){
+    tasks.value.push(newTask.value)
+    newTask.value = ''
   }
 };
-
-const removeTask = (index) => {
-  tasks.value.splice(index, 1);
-  console.log("tasks:", tasks.value);
+const removeItem = (index) => {
+  return tasks.value.splice(index, 1)
 };
 </script>
 
 <template>
   <div class="todo-app">
-    <div class="task-input">
-      <input
-        v-model="newTask"
-        @keyup.enter="addTask"
-        placeholder="write your task here"
-      />
-      <button @click="addTask">Add task</button>
+    <div class="input">
+      <input v-model="newTask" type="text" @keyup.enter="addItem"/>
+      <button @click="addItem">Add task</button>
     </div>
-  <ul>
-    <li v-for="(task, index) in tasks" :key="index" class="list-item">
-      {{ task }}
-      <button @click="removeTask(index)">Remove task</button>
+    <ul>
+      <li v-for="(task, index) in tasks">{{ task }}
+      <button @click="removeItem(index)">Remove task</button>
     </li>
-  </ul>
-    </div>
-
+    </ul>
+  </div>
 </template>
 
 <style scoped>
+
 .todo-app {
-  max-width: 400px;
+  max-width: 500px;
   margin: 50px auto;
-  padding: 20px;
   border: 1px solid;
+  padding: 20px;
 }
 
-.task-input {
+.input {
   display: flex;
+  justify-content: center;
 }
 
-input {
-  flex: 1;
-}
-
-ul {
-  padding: 0
-}
-
-.list-item {
+li{
   display: flex;
   justify-content: space-between;
 }
+
 </style>
