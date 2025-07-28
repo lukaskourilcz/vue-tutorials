@@ -8,16 +8,38 @@ const currentQuestion = ref(null);
 
 const userAnswer = ref("");
 const feedback = ref("");
+const feedbackScore = ref(0);
 const isLoading = ref(false);
 const showFeedback = ref(false);
 const scoreColor = ref("");
 
-// Načtení otázek z JSON souboru
+const totalScore = ref(0);
+const answeredCount = ref(0);
+
+const shuffleArray = (array) => {
+  const copy = [...array];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+};
+
 const loadQuestions = async () => {
-  const res = await fetch("/questions.json");
-  const data = await res.json();
-  questions.value = data;
-  currentQuestion.value = questions.value[0];
+  try {
+    const res = await fetch("/questions.json");
+    const data = await res.json();
+    questions.value = shuffleArray(data.questions);
+
+    currentIndex.value = 0;
+    currentQuestion.value = questions.value[0];
+  } catch (error) {
+    console.error("Failed to load questions:", error);
+    questions.value = [
+      { id: 0, question: "Error loading questions. Please try again." },
+    ];
+    currentQuestion.value = questions.value[0];
+  }
 };
 
 onMounted(() => {
@@ -25,7 +47,7 @@ onMounted(() => {
 });
 
 const submitAnswer = async () => {
-  if (!userAnswer.value.trim()) return;
+  if (!userAnswer.value.trim() || isLoading.value) return;
 
   isLoading.value = true;
   showFeedback.value = false;
@@ -33,27 +55,30 @@ const submitAnswer = async () => {
 
   try {
     const res = await axios.post("http://localhost:3000/evaluate", {
-      question: currentQuestion.value.text,
+      question: currentQuestion.value.question,
       answer: userAnswer.value,
     });
 
+    const score = res.data.score || 0;
+
     feedback.value = res.data.feedback;
+    feedbackScore.value = score;
     showFeedback.value = true;
 
-    // 🎨 Hodnocení barvou podle skóre
-    const score = res.data.score || 0;
+    totalScore.value += score;
+    answeredCount.value += 1;
+
     if (score >= 8) scoreColor.value = "alert-success";
     else if (score >= 5) scoreColor.value = "alert-warning";
     else scoreColor.value = "alert-danger";
-
   } catch (err) {
     feedback.value =
-      "❌ AI hodnocení se nepodařilo načíst. Můžeš zkusit alternativní verzi bez AI.";
+      "❌ Failed to get AI evaluation. Please check backend connection.";
     showFeedback.value = true;
-    console.error("Gemini error:", err);
+    console.error("API call error:", err);
+  } finally {
+    isLoading.value = false;
   }
-
-  isLoading.value = false;
 };
 
 const nextQuestion = () => {
@@ -62,36 +87,45 @@ const nextQuestion = () => {
     currentQuestion.value = questions.value[currentIndex.value];
     userAnswer.value = "";
     feedback.value = "";
+    feedbackScore.value = 0;
     showFeedback.value = false;
     scoreColor.value = "";
+  } else {
+    currentQuestion.value = null;
   }
 };
 </script>
 
 <template>
   <div class="container mt-5" style="max-width: 700px">
-    <h1 class="mb-4">Vue & JS Quiz</h1>
+    <h1 class="mb-4">Vue & JS Quiz (AI powered)</h1>
 
-    <p>
-      <strong>Otázka {{ currentIndex + 1 }} / {{ questions.length }}</strong>
-    </p>
+    <!-- Header with question index and score -->
+    <div
+      class="d-flex justify-content-between align-items-center mb-2"
+      v-if="currentQuestion"
+    >
+      <strong>Question {{ currentIndex + 1 }} / {{ questions.length }}</strong>
+      <span>📒 Score: {{ totalScore }} / {{ answeredCount * 10 }} pts</span>
+    </div>
+
     <div class="card p-4" v-if="currentQuestion">
-      <h5>{{ currentQuestion.text }}</h5>
+      <h5>{{ currentQuestion.question }}</h5>
 
-      <input
+      <textarea
         v-model="userAnswer"
-        type="text"
         class="form-control mt-3"
-        placeholder="Napiš svou odpověď sem..."
+        rows="5"
+        placeholder="Type your answer here..."
         :disabled="isLoading || showFeedback"
-      />
+      ></textarea>
 
       <button
         class="btn btn-primary mt-3"
         @click="submitAnswer"
-        :disabled="isLoading || showFeedback"
+        :disabled="isLoading || showFeedback || !userAnswer.trim()"
       >
-        {{ isLoading ? "Hodnotím..." : "Odeslat" }}
+        {{ isLoading ? "Evaluating..." : "Submit" }}
       </button>
 
       <div
@@ -100,36 +134,37 @@ const nextQuestion = () => {
         :class="scoreColor"
         role="alert"
       >
+        <strong>Score: {{ feedbackScore }}/10</strong><br />
         {{ feedback }}
       </div>
 
-      <div v-if="feedback.includes('Nepodařilo')" class="mt-3">
-        <a
-          href="https://quiz-app-sable-eight-67.vercel.app/"
-          target="_blank"
-          class="btn btn-outline-secondary"
-        >
-          Otevřít verzi bez AI
-        </a>
-      </div>
+      <button
+        class="btn btn-outline-primary mt-3"
+        v-if="showFeedback && currentIndex + 1 < questions.length"
+        @click="nextQuestion"
+      >
+        Next Question
+      </button>
     </div>
 
-    <button
-      class="btn btn-outline-primary mt-3"
-      v-if="showFeedback && currentIndex + 1 < questions.length"
-      @click="nextQuestion"
+    <p v-if="!currentQuestion && questions.length > 0" class="mt-4">
+      ✅ Done! Final score: {{ totalScore }} / {{ questions.length * 10 }} pts.
+    </p>
+    <p
+      v-else-if="!currentQuestion && questions.length === 0"
+      class="mt-4 text-danger"
     >
-      Další otázka
-    </button>
-
-    <p v-if="currentIndex + 1 >= questions.length && showFeedback" class="mt-4">
-      ✅ Hotovo! Odpověděl jsi na všechny otázky.
+      ❌ Error: No questions loaded.
     </p>
   </div>
 </template>
 
 <style scoped>
-input:disabled {
+textarea:disabled {
   background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+.alert {
+  white-space: pre-wrap;
 }
 </style>

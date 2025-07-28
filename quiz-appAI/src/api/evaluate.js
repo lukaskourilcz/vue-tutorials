@@ -15,14 +15,17 @@ app.post("/evaluate", async (req, res) => {
   const { question, answer } = req.body;
 
   const prompt = `
+Zhodnoť odpověď k otázce, přiřaď ji skóre od 1 do 10 a napiš krátké info o správné odpovědi.
+
 Otázka: ${question}
 Odpověď studenta: ${answer}
 
-Zhodnoť odpověď od 1 do 10 a napiš krátké odůvodnění, co je dobře nebo špatně.
-Odpověď vrať **výhradně** ve formátu platného JSON:
+Oznámkuj odpověď číslem od 1 do 10 (1 = špatně, 10 = výborně) a napiš zpětnou vazbu, která bude mít maximálně 250 znaků. Vrať výsledek **pouze** ve formátu platného JSON, bez jakéhokoli úvodu nebo komentáře.
+
+Příklad výstupu:
 {
   "score": 7,
-  "feedback": "Trefil jsi správný koncept, ale chybí podrobnosti o onMounted a alternativách jako onUpdated."
+  "feedback": "Dobře vystižený rozdíl mezi var a let, ale chybí vysvětlení pro const. Nezapoměň, že const má neměnnou hodnotu (u objektů/polí jen referenci) a blokový rozsah, stejně jako let.
 }
 `;
 
