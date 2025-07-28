@@ -54,7 +54,7 @@ const submitAnswer = async () => {
   scoreColor.value = "";
 
   try {
-    const res = await axios.post("http://localhost:3000/evaluate", {
+    const res = await axios.post("https://quiz-app-backend-1-003c.onrender.com/", {
       question: currentQuestion.value.question,
       answer: userAnswer.value,
     });
@@ -98,7 +98,7 @@ const nextQuestion = () => {
 
 <template>
   <div class="container mt-5" style="max-width: 700px">
-    <h1 class="mb-4">Vue & JS Quiz (AI powered)</h1>
+    <h1 class="mb-4">🧠 Vue & JS Quiz (AI powered)</h1>
 
     <div
       class="d-flex justify-content-between align-items-center mb-2 mx-3"
