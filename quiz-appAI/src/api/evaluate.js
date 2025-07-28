@@ -15,20 +15,20 @@ app.post("/evaluate", async (req, res) => {
   const { question, answer } = req.body;
 
   const prompt = `
-Bodově vyhodnoť odpověď studenta k níže uvedené otázce a napiš správnou odpověď.
+Evaluate the answer to the question below and provide the correct answer.
 
-Otázka: ${question}
+Question: ${question}
 
-Odpověď studenta: ${answer}
+Student's answer: ${answer}
 
-Zhodnoť odpověď známkou od 1 do 10 (1 = špatná, 10 = výborná). Napiš zároveň správnou odpověd — vše dohromady maximálně 250 znaků.
+Grade the answer on a scale from 1 to 10 (1 = poor, 10 = excellent). Also include the correct answer — everything combined must be no more than 300 characters.
 
-Vrať výsledek **pouze** jako validní JSON objekt, bez jakéhokoli úvodu nebo komentáře.
+Return the result **only** as a valid JSON object, with no introduction or comments.
 
-Příklad výstupu:
+Example output:
 {
   "score": 7,
-  "feedback": "Promise nejsou funkce, které čekají na zavolání, ale objekty reprezentující výsledek (nebo chybu) asynchronní operace. Syntaktický cukr async/await umožňuje pracovat s Promisy přehlednějším způsobem – zápis pak vypadá jako synchronní kód."
+  "feedback": "Promises are not functions that wait to be called, but objects representing the result (or error) of an async operation. The async/await syntax makes working with Promises easier and looks like synchronous code."
 }
 `;
 
@@ -38,14 +38,14 @@ Příklad výstupu:
     const response = await result.response;
 
     if (!response) {
-      throw new Error("Gemini nevrátil žádnou odpověď (response je null).");
+      throw new Error("Gemini did not return any response (response is null).");
     }
 
     const text = await response.text();
 
     if (!text || typeof text !== "string") {
       throw new Error(
-        "Gemini neposlal žádný text nebo byl ve špatném formátu."
+        "Gemini returned no text or it was in an invalid format."
       );
     }
 
@@ -57,7 +57,7 @@ Příklad výstupu:
 
     if (!match || (!match[1] && !match[2] && !match[0])) {
       throw new Error(
-        "Gemini odpověď nebyla ve formátu JSON nebo ho nelze extrahovat."
+        "Gemini response was not in JSON format or it couldn’t be extracted."
       );
     }
 
@@ -67,16 +67,16 @@ Příklad výstupu:
     const parsed = JSON.parse(jsonString);
     res.json(parsed);
   } catch (err) {
-    console.error("❌ Chyba:", err);
+    console.error("❌ Error:", err);
     res.status(500).json({
       score: 0,
       feedback:
-        "❌ Chyba při získávání hodnocení z AI. Zkus jinou odpověď nebo použij offline verzi.",
+        "❌ Failed to get evaluation from AI. Try a different answer or contact the admin.",
     });
   }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Backend běží na http://localhost:${PORT}`);
+  console.log(`✅ Backend is running at http://localhost:${PORT}`);
 });
