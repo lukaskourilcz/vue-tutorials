@@ -54,7 +54,7 @@ const submitAnswer = async () => {
   aiError.value = false; 
 
   try {
-    const res = await axios.post("https://quiz-app-backend-1-003c.onrender.com/", {
+    const res = await axios.post("https://quiz-app-backend-1-003c.onrender.com/evaluate", {
       question: currentQuestion.value.question,
       answer: userAnswer.value,
     });
