@@ -505,51 +505,76 @@ const questions = ref(
         "Axios je knihovna s extra funkcemi (interceptory, automatická serializace), zatímco fetch je vestavěné API.",
     },
     {
-      text: "Jak se v axiosu posílá POST požadavek?",
+      text: "Co je to Axios?",
       options: [
-        "axios.fetch('/url', data)",
-        "axios.post('/url', data)",
-        "axios.POST('/url', data)",
-        "axios.send('/url', data)",
-      ],
-      correct: 1,
-      explanation: "`axios.post('/url', data)` odešle POST request s daty.",
-    },
-    {
-      text: "Jak nastavíte hlavičky v axiosu?",
-      options: [
-        "axios.headers('/url')",
-        "axios.get('/url', { headers: {...} })",
-        "axios.setHeaders('/url')",
-        "axios.config.headers('/url')",
-      ],
-      correct: 1,
-      explanation:
-        "Axios umožňuje posílat hlavičky v druhém argumentu jako objekt `{ headers: { Authorization: ... } }`.",
-    },
-    {
-      text: "Co je to interceptor v axiosu?",
-      options: [
-        "Funkce, která zachytává requesty nebo response před zpracováním.",
-        "Metoda pro cacheování dat.",
-        "Způsob validace JSON.",
-        "Alternativa k fetch.",
+        "JavaScript knihovna pro HTTP požadavky, která rozšiřuje fetch a nabízí interceptory a jednodušší práci s JSON.",
+        "Framework pro tvorbu React aplikací.",
+        "Databázový nástroj.",
+        "CSS preprocesor.",
       ],
       correct: 0,
       explanation:
-        "Axios interceptory umožňují manipulovat s requesty a response (např. přidat token do hlaviček).",
+        "Axios je knihovna pro posílání HTTP požadavků. Je oblíbený pro jednoduchost, interceptory a automatické zpracování JSON dat.",
     },
     {
-      text: "Jak zrušíte request v axiosu?",
+      text: "K čemu slouží hook `useState` v Reactu?",
       options: [
-        "axios.cancel()",
-        "CancelToken",
-        "axios.stop()",
-        "axios.abort()",
+        "Ke správě interního stavu komponenty.",
+        "K práci s DOM elementy.",
+        "K definování CSS proměnných.",
+        "K inicializaci Redux store.",
+      ],
+      correct: 0,
+      explanation:
+        "`useState` umožňuje komponentám uchovávat a měnit stav mezi renderováními.",
+    },
+    {
+      text: "Jaký je rozdíl mezi `useEffect` a `useLayoutEffect`?",
+      options: [
+        "Žádný rozdíl není.",
+        "`useEffect` běží po vykreslení, zatímco `useLayoutEffect` běží synchronně před vykreslením.",
+        "`useLayoutEffect` je určen jen pro Next.js.",
+        "`useEffect` funguje pouze na serveru.",
       ],
       correct: 1,
       explanation:
-        "Axios má `CancelToken` nebo `AbortController` pro zrušení requestu.",
+        "`useEffect` spouští efekty po vykreslení, zatímco `useLayoutEffect` umožňuje spustit efekt synchronně před tím, než je DOM „namalován“.",
+    },
+    {
+      text: "Co je to prop drilling?",
+      options: [
+        "Situace, kdy se props předávají z rodiče do více úrovní dětských komponent, i když je využívají až hluboko zanořené komponenty.",
+        "Proces optimalizace výkonu v Reactu.",
+        "Testování komponent pomocí props.",
+        "Nástroj pro sdílení stavu mezi Reduxem a Context API.",
+      ],
+      correct: 0,
+      explanation:
+        "Prop drilling znamená nadměrné předávání props napříč komponentami. Často se řeší Context API nebo knihovnami pro správu stavu.",
+    },
+    {
+      text: "Jaký je rozdíl mezi server-side rendering (SSR) a client-side rendering (CSR) v React aplikacích?",
+      options: [
+        "SSR renderuje HTML na serveru a posílá ho klientovi, CSR vykresluje obsah až v prohlížeči.",
+        "CSR je vždy rychlejší než SSR.",
+        "SSR funguje jen s Reduxem.",
+        "CSR vyžaduje Node.js, SSR ne.",
+      ],
+      correct: 0,
+      explanation:
+        "SSR zlepšuje SEO a first load tím, že HTML připraví server. CSR spoléhá na to, že prohlížeč stáhne JS a vykreslí obsah až lokálně.",
+    },
+    {
+      text: "Kdy byste použili `React.memo`?",
+      options: [
+        "Pro memoizaci hodnot uvnitř hooků.",
+        "K zabránění zbytečnému překreslování funkčních komponent, pokud se props nezměnily.",
+        "Pro testování React komponent.",
+        "Pro ukládání dat do localStorage.",
+      ],
+      correct: 1,
+      explanation:
+        "`React.memo` je higher-order komponent, který pomáhá optimalizovat výkon tím, že komponentu přerenderuje jen při změně props.",
     },
   ])
 );
