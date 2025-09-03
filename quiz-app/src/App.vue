@@ -27,7 +27,7 @@ const questions = ref(
     {
       text: "Jak zajistíte, že je webová stránka responzivní pouze pomocí CSS?",
       options: [
-        "Použitím atributů `width` a `height` v HTML.",
+        "Použitím atributů width a height v HTML.",
         "Použitím JavaScriptu k detekci velikosti obrazovky.",
         "Pomocí CSS Media Queries a flexboxu/gridu, které mění styly na základě velikosti okna.",
         "Použitím absolutního pozicování pro všechny prvky.",
@@ -37,22 +37,22 @@ const questions = ref(
         "Media Queries umožňují aplikovat různé styly v závislosti na vlastnostech zařízení, jako je šířka obrazovky. Flexbox a Grid jsou pak klíčové pro vytváření flexibilních rozložení.",
     },
     {
-      text: "Co udělá `===` v JavaScriptu a jaký je rozdíl oproti `==`?",
+      text: "Co udělá === v JavaScriptu a jaký je rozdíl oproti ==?",
       options: [
-        "Oba operátory porovnávají hodnotu i typ, ale `==` je zastaralý.",
-        "`===` porovnává hodnoty i datové typy bez konverze, zatímco `==` provádí volnou konverzi typů.",
+        "Oba operátory porovnávají hodnotu i typ, ale == je zastaralý.",
+        "=== porovnává hodnoty i datové typy bez konverze, zatímco == provádí volnou konverzi typů.",
         "Oba operátory se používají k přiřazení proměnné.",
-        "`===` se používá jen pro čísla, `==` pro řetězce.",
+        "=== se používá jen pro čísla, == pro řetězce.",
       ],
       correct: 1,
       explanation:
-        "`===` je přísné porovnání, které kontroluje, zda se hodnoty i jejich datové typy shodují. `==` je volné porovnání, které se pokusí převést datové typy, což může vést k nečekaným výsledkům.",
+        "=== je přísné porovnání, které kontroluje, zda se hodnoty i jejich datové typy shodují. == je volné porovnání, které se pokusí převést datové typy, což může vést k nečekaným výsledkům.",
     },
     {
       text: "Vysvětlete koncept event loopu v JavaScriptu.",
       options: [
         "Je to cyklus pro provádění synchronního kódu.",
-        "Je to mechanismus, který zajišťuje, že se asynchronní kód (např. `setTimeout`) provádí bez blokování hlavního vlákna.",
+        "Je to mechanismus, který zajišťuje, že se asynchronní kód (např. setTimeout) provádí bez blokování hlavního vlákna.",
         "Je to speciální typ datové struktury pro ukládání událostí.",
         "Jedná se o cyklus pro zpracování HTTP požadavků.",
       ],
@@ -61,19 +61,19 @@ const questions = ref(
         "Event loop je klíčový pro asynchronní chování JavaScriptu. Umožňuje spouštění úloh na pozadí a jejich následné přesunutí do call stacku, jakmile jsou dokončeny, čímž se zabrání zablokování uživatelského rozhraní.",
     },
     {
-      text: "Jaký je rozdíl mezi `var`, `let` a `const`?",
+      text: "Jaký je rozdíl mezi var, let a const?",
       options: [
-        "`var` je pro čísla, `let` pro řetězce, `const` pro objekty.",
-        "`var` má globální/funkční rozsah a je hoistovaný; `let` a `const` mají blokový rozsah. `const` navíc nelze znovu přiřadit.",
-        "`let` je starší než `var` a `const`.",
+        "var je pro čísla, let pro řetězce, const pro objekty.",
+        "var má globální/funkční rozsah a je hoistovaný; let a const mají blokový rozsah. const navíc nelze znovu přiřadit.",
+        "let je starší než var a const.",
         "Všechny tři jsou identické, pouze je to jiný zápis.",
       ],
       correct: 1,
       explanation:
-        "`var` má širší rozsah a historicky se používá méně. `let` a `const` jsou moderní a bezpečnější pro deklaraci proměnných, protože omezují jejich platnost na konkrétní blok kódu.",
+        "var má širší rozsah a historicky se používá méně. let a const jsou moderní a bezpečnější pro deklaraci proměnných, protože omezují jejich platnost na konkrétní blok kódu.",
     },
     {
-      text: "K čemu slouží `Array.prototype.map()`?",
+      text: "K čemu slouží Array.prototype.map()?",
       options: [
         "Pro nalezení prvního prvku v poli, který splňuje podmínku.",
         "K vytvoření nového pole transformací každého prvku původního pole.",
@@ -82,19 +82,19 @@ const questions = ref(
       ],
       correct: 1,
       explanation:
-        "`map()` je ideální pro transformaci dat. Prochází každý prvek v poli, provede nad ním operaci a vrátí zcela nové pole s výsledky.",
+        "map() je ideální pro transformaci dat. Prochází každý prvek v poli, provede nad ním operaci a vrátí zcela nové pole s výsledky.",
     },
     {
-      text: "Vysvětlete, co jsou to promises a jaký je jejich vztah k `async/await`.",
+      text: "Vysvětlete, co jsou to promises a jaký je jejich vztah k async/await.",
       options: [
-        "Promises jsou starší než `async/await`, proto se už nepoužívají.",
-        "Promises jsou objekty, které reprezentují budoucí výsledek asynchronní operace. `async/await` je syntaktický 'cukr' nad promises, který usnadňuje čtení kódu.",
-        "Promises jsou pouze pro front-end, `async/await` jen pro back-end.",
+        "Promises jsou starší než async/await, proto se už nepoužívají.",
+        "Promises jsou objekty, které reprezentují budoucí výsledek asynchronní operace. async/await je syntaktický 'cukr' nad promises, který usnadňuje čtení kódu.",
+        "Promises jsou pouze pro front-end, async/await jen pro back-end.",
         "Jsou to dva zcela odlišné koncepty.",
       ],
       correct: 1,
       explanation:
-        "Promises umožňují psát asynchronní kód s použitím řetězení `.then()` a `.catch()`. `async/await` je moderní a čitelnější alternativa, která pracuje s promises na pozadí.",
+        "Promises umožňují psát asynchronní kód s použitím řetězení .then() a .catch(). async/await je moderní a čitelnější alternativa, která pracuje s promises na pozadí.",
     },
     {
       text: "Jaký je rozdíl mezi Props a State v Reactu?",
@@ -106,10 +106,10 @@ const questions = ref(
       ],
       correct: 1,
       explanation:
-        "Props (zkratka pro properties) slouží k předávání dat z rodiče do dětí a jsou immutabilní. State je interní stav komponenty, který může být měněn pomocí funkcí jako `useState`.",
+        "Props (zkratka pro properties) slouží k předávání dat z rodiče do dětí a jsou immutabilní. State je interní stav komponenty, který může být měněn pomocí funkcí jako useState.",
     },
     {
-      text: "Vysvětlete účel `useEffect` hooku v Reactu.",
+      text: "Vysvětlete účel useEffect hooku v Reactu.",
       options: [
         "Umožňuje měnit stav komponenty.",
         "Používá se k vytvoření reaktivních proměnných.",
@@ -118,7 +118,7 @@ const questions = ref(
       ],
       correct: 2,
       explanation:
-        "`useEffect` se používá k provádění operací, které nepatří do hlavního vykreslovacího cyklu komponenty. Například se používá pro API volání, manipulaci s DOM nebo nastavení timerů.",
+        "useEffect se používá k provádění operací, které nepatří do hlavního vykreslovacího cyklu komponenty. Například se používá pro API volání, manipulaci s DOM nebo nastavení timerů.",
     },
     {
       text: "Co je to Virtual DOM a proč ho React používá?",
@@ -148,13 +148,13 @@ const questions = ref(
       text: "Vysvětlete koncept dynamických rout v Next.js a jak se implementují.",
       options: [
         "Jsou to routy, které se dynamicky mění na základě uživatele.",
-        "Dynamické routy umožňují vytvářet cesty s proměnnými parametry (např. `/products/[id]`), které se dynamicky načítají na základě URL.",
+        "Dynamické routy umožňují vytvářet cesty s proměnnými parametry (např. /products/[id]), které se dynamicky načítají na základě URL.",
         "Jsou to routy, které se mění, když je aplikace offline.",
         "Implementují se pouze s použitím React Context API.",
       ],
       correct: 1,
       explanation:
-        "Dynamické routy se v Next.js implementují vytvořením složky s hranatými závorkami (např. `pages/blog/[slug].js`). To umožňuje získat parametry z URL pro vykreslení obsahu.",
+        "Dynamické routy se v Next.js implementují vytvořením složky s hranatými závorkami (např. pages/blog/[slug].js). To umožňuje získat parametry z URL pro vykreslení obsahu.",
     },
     {
       text: "Co je to Node.js a k čemu slouží?",
@@ -202,7 +202,7 @@ const questions = ref(
       ],
       correct: 2,
       explanation:
-        "Základní operace s daty se shrnují pod akronymem CRUD (Create, Read, Update, Delete) a v SQL jim odpovídají příkazy `INSERT`, `SELECT`, `UPDATE` a `DELETE`.",
+        "Základní operace s daty se shrnují pod akronymem CRUD (Create, Read, Update, Delete) a v SQL jim odpovídají příkazy INSERT, SELECT, UPDATE a DELETE.",
     },
     {
       text: "Co je to DOM v JavaScriptu?",
@@ -217,7 +217,7 @@ const questions = ref(
         "DOM (Document Object Model) umožňuje JavaScriptu přistupovat k prvkům HTML a manipulovat s nimi.",
     },
     {
-      text: "K čemu slouží atribut `alt` u obrázků v HTML?",
+      text: "K čemu slouží atribut alt u obrázků v HTML?",
       options: [
         "Definuje velikost obrázku.",
         "Popisuje obsah obrázku pro čtečky obrazovky a při selhání načtení.",
@@ -226,7 +226,7 @@ const questions = ref(
       ],
       correct: 1,
       explanation:
-        "Atribut `alt` zlepšuje přístupnost webu a pomáhá SEO, protože poskytuje textovou alternativu k obrázkům.",
+        "Atribut alt zlepšuje přístupnost webu a pomáhá SEO, protože poskytuje textovou alternativu k obrázkům.",
     },
     {
       text: "Co znamená zkratka CSS?",
@@ -241,13 +241,13 @@ const questions = ref(
         "CSS znamená Cascading Style Sheets a slouží k popisu vzhledu HTML prvků.",
     },
     {
-      text: "Jaký je výchozí zobrazovací mód prvku `<div>`?",
+      text: "Jaký je výchozí zobrazovací mód prvku <div>?",
       options: ["inline", "block", "inline-block", "flex"],
       correct: 1,
-      explanation: "`<div>` je blokový prvek, proto zabírá celou šířku řádku.",
+      explanation: "<div> je blokový prvek, proto zabírá celou šířku řádku.",
     },
     {
-      text: "K čemu slouží metoda `querySelector()` v JavaScriptu?",
+      text: "K čemu slouží metoda querySelector() v JavaScriptu?",
       options: [
         "Vrátí první element, který odpovídá zadanému CSS selektoru.",
         "Vytvoří nový HTML prvek.",
@@ -256,325 +256,300 @@ const questions = ref(
       ],
       correct: 0,
       explanation:
-        "`document.querySelector()` vrací první nalezený element podle CSS selektoru.",
+        "document.querySelector() vrací první nalezený element podle CSS selektoru.",
     },
     {
-      text: "Jak vytvoříte komentář v JavaScriptu?",
+      text: "Co je to React Context API?",
       options: [
-        "`<!-- komentář -->`",
-        "`/* komentář */` nebo `// komentář`",
-        "`# komentář`",
-        "`** komentář **`",
+        "Nástroj pro stylování komponent.",
+        "Mechanismus pro sdílení dat napříč komponentami bez props drillingu.",
+        "Metoda pro volání API.",
+        "Náhrada za useState.",
       ],
       correct: 1,
       explanation:
-        "Jednořádkový komentář se zapisuje `//`, víceřádkový `/* ... */`.",
+        "React Context API umožňuje sdílet stav a data napříč celou aplikací bez nutnosti předávat props skrz mnoho vrstev komponent.",
     },
     {
-      text: "K čemu slouží funkce `console.log()`?",
+      text: "Kdy se používá `useMemo` hook?",
       options: [
-        "Ukládá data do databáze.",
-        "Vypisuje zprávy a hodnoty do konzole pro ladění.",
-        "Spouští JavaScriptový soubor.",
-        "Vypisuje HTML na stránku.",
+        "Pro ukládání výsledku výpočtu, aby se zbytečně nepřepočítával při každém renderu.",
+        "Pro přístup k DOM elementu.",
+        "Pro nastavení CSS proměnných.",
+        "Pro validaci formulářů.",
+      ],
+      correct: 0,
+      explanation:
+        "`useMemo` optimalizuje výkon uložením hodnoty výpočtu mezi renderováními, dokud se nezmění závislosti.",
+    },
+    {
+      text: "K čemu slouží `useCallback`?",
+      options: [
+        "Vrací memoizovanou verzi callback funkce.",
+        "Ukládá hodnotu stavu.",
+        "Slouží jako alternativa k useEffect.",
+        "Automaticky volá API.",
+      ],
+      correct: 0,
+      explanation:
+        "`useCallback` vrací memoizovanou funkci, což pomáhá optimalizovat výkon u komponent závislých na funkcích.",
+    },
+    {
+      text: "Jaký je rozdíl mezi controlled a uncontrolled komponentami v Reactu?",
+      options: [
+        "Controlled komponenty řídí svůj stav pomocí React state, uncontrolled používají DOM.",
+        "Uncontrolled komponenty mají více props.",
+        "Controlled komponenty nelze použít s formuláři.",
+        "Žádný rozdíl není.",
+      ],
+      correct: 0,
+      explanation:
+        "Controlled komponenty jsou plně řízeny stavem v Reactu (`useState`), uncontrolled používají nativní hodnoty DOM prvků (např. `ref`).",
+    },
+    {
+      text: "Co je to React.Fragment?",
+      options: [
+        "Prázdný komponent, který umožňuje vracet více elementů bez wrapperu navíc v DOM.",
+        "Speciální hook pro data.",
+        "Náhrada divu s CSS.",
+        "Metoda pro optimalizaci výkonu.",
+      ],
+      correct: 0,
+      explanation:
+        "React.Fragment umožňuje seskupit více elementů bez přidání extra uzlu do DOM.",
+    },
+
+    {
+      text: "Co je event-driven architektura v Node.js?",
+      options: [
+        "Architektura založená na poslouchání a spouštění událostí.",
+        "Architektura pro správu databází.",
+        "Styl psaní CSS.",
+        "Funkce pro vykreslování React komponent.",
+      ],
+      correct: 0,
+      explanation:
+        "Node.js používá event-driven architekturu, což znamená, že asynchronní úlohy jsou řízeny událostmi a callbacky.",
+    },
+    {
+      text: "Jak v Node.js načíst externí modul?",
+      options: [
+        "import module from 'modulename'",
+        "require('modulename')",
+        "use('modulename')",
+        "include('modulename')",
       ],
       correct: 1,
       explanation:
-        "`console.log()` je nejčastější nástroj pro ladění v JavaScriptu.",
+        "Starší syntaxe v Node.js je `require('modulename')`. Moderní Node.js umožňuje i ES Modules (`import`).",
     },
     {
-      text: "Co je to JSX v Reactu?",
+      text: "Co dělá `process.env` v Node.js?",
       options: [
-        "Speciální CSS pro React.",
-        "Rozšíření syntaxe JavaScriptu, které umožňuje psát HTML přímo v JS.",
-        "Formát JSON pro ukládání dat.",
-        "Nový typ proměnné.",
+        "Ukládá nastavení CSS proměnných.",
+        "Umožňuje přístup k environment proměnným systému.",
+        "Spouští procesy na serveru.",
+        "Vytváří nové databázové schéma.",
       ],
       correct: 1,
       explanation:
-        "JSX umožňuje psát HTML podobnou syntaxi přímo uvnitř JavaScriptu, což React překládá do `React.createElement` volání.",
+        "`process.env` poskytuje přístup k environment proměnným (např. API klíče, konfigurace).",
     },
     {
-      text: "K čemu slouží hook `useState` v Reactu?",
-      options: [
-        "Na správu stylů.",
-        "Na správu interního stavu komponenty.",
-        "Na vytvoření efektů.",
-        "Na přístup k DOMu.",
-      ],
-      correct: 1,
-      explanation:
-        "`useState` umožňuje komponentám ukládat a měnit interní stav.",
+      text: "Jak ukončíte běžící Node.js proces?",
+      options: ["`exit()`", "`stop`", "`process.exit()`", "`killNode()`"],
+      correct: 2,
+      explanation: "`process.exit()` okamžitě ukončí Node.js proces.",
     },
     {
-      text: "Jak se v Reactu vykresluje seznam prvků?",
-      options: [
-        "Pomocí cyklu `for` přímo v JSX.",
-        "Pomocí metody `.map()` pro vytvoření pole JSX prvků.",
-        "Pouze pomocí `while` smyčky.",
-        "React neumí vykreslovat seznamy.",
-      ],
-      correct: 1,
-      explanation:
-        "Pro vykreslování seznamů se typicky používá `.map()`, kde každý prvek dostane i unikátní `key` prop.",
-    },
-    {
-      text: "Jaký je účel složky `pages` v Next.js?",
-      options: [
-        "Obsahuje databázová schémata.",
-        "Každý soubor zde automaticky definuje routu aplikace.",
-        "Používá se jen pro CSS.",
-        "Je určena pouze pro obrázky.",
-      ],
-      correct: 1,
-      explanation:
-        "V Next.js routování funguje na základě struktury složky `pages` – každý soubor = jedna stránka.",
-    },
-    {
-      text: "Co dělá příkaz `npm install`?",
+      text: "K čemu slouží `npm init`?",
       options: [
         "Spustí server.",
-        "Instaluje závislosti definované v `package.json`.",
-        "Odebere balíčky.",
-        "Spustí build aplikace.",
+        "Vytvoří nový `package.json` soubor pro projekt.",
+        "Instaluje všechny moduly.",
+        "Zastaví běžící aplikaci.",
       ],
       correct: 1,
       explanation:
-        "`npm install` stáhne a nainstaluje všechny balíčky potřebné pro projekt.",
+        "`npm init` inicializuje nový Node.js projekt a vytvoří `package.json`.",
+    },
+
+    {
+      text: "Co je Git commit?",
+      options: [
+        "Kopie celého projektu.",
+        "Uložení aktuálních změn do historie repozitáře.",
+        "Nahrání projektu na server.",
+        "Vytvoření nové větve.",
+      ],
+      correct: 1,
+      explanation:
+        "Commit ukládá změny s unikátním ID a zprávou, aby bylo možné sledovat historii projektu.",
     },
     {
-      text: "K čemu se používá modul `http` v Node.js?",
+      text: "Jaký je rozdíl mezi `git pull` a `git fetch`?",
       options: [
-        "Na stylování HTML.",
-        "Na práci s databázemi.",
-        "Na vytváření webových serverů.",
-        "Na validaci JSON souborů.",
+        "`git fetch` stáhne změny bez sloučení, `git pull` stáhne a rovnou sloučí.",
+        "Oba dělají to samé.",
+        "`git fetch` je pro nové projekty, `git pull` pro staré.",
+        "Rozdíl neexistuje.",
+      ],
+      correct: 0,
+      explanation:
+        "`git fetch` jen stáhne data z remote, ale nemergeuje. `git pull` stáhne i sloučí.",
+    },
+    {
+      text: "Jak vytvoříte novou větev v Gitu?",
+      options: [
+        "`git create branch nazev`",
+        "`git checkout -b nazev`",
+        "`git branch checkout nazev`",
+        "`git switch new nazev`",
+      ],
+      correct: 1,
+      explanation: "Nová větev se vytvoří příkazem `git checkout -b nazev`.",
+    },
+    {
+      text: "Co dělá `.gitignore` soubor?",
+      options: [
+        "Ignoruje nepotřebné soubory při commitování.",
+        "Blokuje uživatele na GitHubu.",
+        "Maže soubory.",
+        "Slouží jako README.",
+      ],
+      correct: 0,
+      explanation:
+        ".gitignore definuje soubory/složky, které nemají být sledovány v Git repozitáři (např. node_modules).",
+    },
+    {
+      text: "Jak odešlete změny na GitHub?",
+      options: [
+        "`git push origin branch`",
+        "`git upload branch`",
+        "`git send branch`",
+        "`git save branch`",
+      ],
+      correct: 0,
+      explanation:
+        "`git push origin nazev-vetve` odešle commity z lokálu na vzdálený repozitář.",
+    },
+
+    {
+      text: "Jak deklarujete funkci jako asynchronní?",
+      options: [
+        "function async myFunc()",
+        "async function myFunc()",
+        "await function myFunc()",
+        "function myFunc(async)",
+      ],
+      correct: 1,
+      explanation: "Funkce se deklaruje `async function myFunc() { ... }`.",
+    },
+    {
+      text: "Co dělá `await` klíčové slovo?",
+      options: [
+        "Pozastaví vykonávání funkce, dokud se promise nevyřeší.",
+        "Spustí funkci rychleji.",
+        "Přidá chyby automaticky.",
+        "Slouží jako cyklus.",
+      ],
+      correct: 0,
+      explanation: "`await` počká na vyřešení promise a vrátí její hodnotu.",
+    },
+    {
+      text: "Jak zachytíte chybu při použití `async/await`?",
+      options: [
+        "Pomocí try/catch bloku.",
+        "Pomocí finally.",
+        "Pomocí if podmínky.",
+        "Chyby se nedají zachytit.",
+      ],
+      correct: 0,
+      explanation:
+        "Chyby v async/await se zachytávají v `try { ... } catch(err) { ... }`.",
+    },
+    {
+      text: "Co vrací `fetch()` funkce?",
+      options: [
+        "Objekt XMLHttpRequest.",
+        "Promise, která se vyřeší s Response objektem.",
+        "Pole JSON dat.",
+        "HTML dokument.",
+      ],
+      correct: 1,
+      explanation:
+        "`fetch()` vrací promise s Response objektem, který lze převést na JSON nebo text.",
+    },
+    {
+      text: "Jak převedete `fetch` odpověď na JSON?",
+      options: [
+        "response.convert()",
+        "response.toJSON()",
+        "response.json()",
+        "response.JSON()",
       ],
       correct: 2,
       explanation:
-        "Modul `http` umožňuje vytvářet jednoduché webové servery přímo v Node.js.",
+        "Po `fetch()` voláme `response.json()`, které vrátí promise s daty.",
     },
     {
-      text: "Jaký je výchozí port pro běh Node.js serveru?",
-      options: ["21", "80", "3000", "443"],
-      correct: 2,
-      explanation:
-        "Nepsané pravidlo je používat port `3000` pro lokální Node.js servery (HTTP je standardně 80).",
-    },
-    {
-      text: "Jaký je rozdíl mezi `id` a `class` v HTML?",
+      text: "Jaký je hlavní rozdíl mezi fetch a axios?",
       options: [
-        "`id` může být použito vícekrát, `class` jen jednou.",
-        "`id` je unikátní identifikátor prvku, `class` lze použít pro skupiny prvků.",
-        "Obě jsou identické.",
-        "`class` je jen pro JavaScript, `id` jen pro CSS.",
-      ],
-      correct: 1,
-      explanation:
-        "`id` by měl být unikátní na stránce, zatímco `class` se používá pro označení více prvků se stejným stylem nebo chováním.",
-    },
-    {
-      text: "K čemu slouží HTML tag `<a>`?",
-      options: [
-        "K vytvoření odstavce.",
-        "K přidání obrázku.",
-        "K vytvoření odkazu na jinou stránku nebo část dokumentu.",
-        "K definování tabulky.",
-      ],
-      correct: 2,
-      explanation:
-        "`<a>` (anchor) se používá k vytváření odkazů, typicky pomocí atributu `href`.",
-    },
-    {
-      text: "Jak vložíte externí CSS soubor do HTML?",
-      options: [
-        "Pomocí tagu `<css>`.",
-        "Pomocí atributu `style` u `<body>`.",
-        "Pomocí tagu `<link>` v `<head>`.",
-        "Pomocí tagu `<style>`.",
-      ],
-      correct: 2,
-      explanation:
-        'Externí CSS soubor se připojuje pomocí `<link rel="stylesheet" href="soubor.css">`.',
-    },
-    {
-      text: "Jaký je rozdíl mezi inline a block prvky?",
-      options: [
-        "Inline prvky vždy zabírají celou šířku řádku, block jen část.",
-        "Block prvky začínají na novém řádku a zabírají celou šířku, inline prvky jsou v rámci textu.",
-        "Block prvky nelze stylovat, inline ano.",
-        "Inline prvky jsou jen v CSS, block prvky v HTML.",
-      ],
-      correct: 1,
-      explanation:
-        "Block prvky (např. `<div>`) zabírají celý řádek, inline (např. `<span>`) se řadí vedle textu.",
-    },
-    {
-      text: "K čemu slouží CSS vlastnost `position: absolute;`?",
-      options: [
-        "Umístí prvek relativně k rodiči s `position: relative`.",
-        "Zamkne prvek na místě při scrollování.",
-        "Skryje prvek.",
-        "Přemění prvek na flexbox.",
+        "Axios automaticky zpracovává JSON a má více funkcí (interceptory).",
+        "Fetch je jen pro Node.js.",
+        "Axios je pomalejší.",
+        "Rozdíl neexistuje.",
       ],
       correct: 0,
       explanation:
-        "Absolutní pozicování určuje polohu prvku relativně k nejbližšímu rodiči s nastaveným `position`.",
+        "Axios je knihovna s extra funkcemi (interceptory, automatická serializace), zatímco fetch je vestavěné API.",
     },
     {
-      text: "Jaký je rozdíl mezi `==` a `===` v JavaScriptu?",
+      text: "Jak se v axiosu posílá POST požadavek?",
       options: [
-        "`==` porovnává jen hodnotu, `===` hodnotu i typ.",
-        "`==` porovnává jen čísla, `===` jen řetězce.",
-        "`==` je pro funkce, `===` pro objekty.",
-        "Oba jsou identické.",
+        "axios.fetch('/url', data)",
+        "axios.post('/url', data)",
+        "axios.POST('/url', data)",
+        "axios.send('/url', data)",
+      ],
+      correct: 1,
+      explanation: "`axios.post('/url', data)` odešle POST request s daty.",
+    },
+    {
+      text: "Jak nastavíte hlavičky v axiosu?",
+      options: [
+        "axios.headers('/url')",
+        "axios.get('/url', { headers: {...} })",
+        "axios.setHeaders('/url')",
+        "axios.config.headers('/url')",
+      ],
+      correct: 1,
+      explanation:
+        "Axios umožňuje posílat hlavičky v druhém argumentu jako objekt `{ headers: { Authorization: ... } }`.",
+    },
+    {
+      text: "Co je to interceptor v axiosu?",
+      options: [
+        "Funkce, která zachytává requesty nebo response před zpracováním.",
+        "Metoda pro cacheování dat.",
+        "Způsob validace JSON.",
+        "Alternativa k fetch.",
       ],
       correct: 0,
       explanation:
-        "`==` provádí volnou konverzi typů, zatímco `===` vyžaduje shodu hodnoty i typu.",
+        "Axios interceptory umožňují manipulovat s requesty a response (např. přidat token do hlaviček).",
     },
     {
-      text: "K čemu slouží `JSON.stringify()`?",
+      text: "Jak zrušíte request v axiosu?",
       options: [
-        "K převedení JSON do objektu.",
-        "K převedení objektu do JSON řetězce.",
-        "K vymazání JSON.",
-        "K validaci JSON.",
+        "axios.cancel()",
+        "CancelToken",
+        "axios.stop()",
+        "axios.abort()",
       ],
       correct: 1,
       explanation:
-        "`JSON.stringify()` převádí JavaScriptový objekt na textový JSON řetězec.",
-    },
-    {
-      text: "K čemu slouží `fetch()` API?",
-      options: [
-        "Na stylování HTML.",
-        "Na práci s databází.",
-        "Na posílání HTTP požadavků (např. GET, POST).",
-        "Na spouštění animací.",
-      ],
-      correct: 2,
-      explanation:
-        "`fetch()` umožňuje posílat asynchronní požadavky na server a pracovat s odpověďmi.",
-    },
-    {
-      text: "Co je to `package.json` v Node.js projektu?",
-      options: [
-        "Soubor s CSS styly.",
-        "Soubor, který definuje závislosti a nastavení projektu.",
-        "Soubor pro ukládání databáze.",
-        "Soubor s HTML šablonami.",
-      ],
-      correct: 1,
-      explanation:
-        "`package.json` obsahuje metadata projektu a seznam jeho závislostí.",
-    },
-    {
-      text: "Jaký je účel `node_modules` složky?",
-      options: [
-        "Ukládá nainstalované balíčky a knihovny.",
-        "Obsahuje všechny HTML soubory projektu.",
-        "Slouží pro testování.",
-        "Je určena pouze pro CSS.",
-      ],
-      correct: 0,
-      explanation:
-        "Složka `node_modules` obsahuje všechny balíčky nainstalované pomocí npm/yarn.",
-    },
-    {
-      text: "Co je middleware v Node.js (např. v Express)?",
-      options: [
-        "Funkce, která zachytává a zpracovává požadavky mezi klientem a serverem.",
-        "Speciální databáze.",
-        "HTML šablona.",
-        "CSS knihovna.",
-      ],
-      correct: 0,
-      explanation:
-        "Middleware je funkce, která může manipulovat s requestem a response před odesláním odpovědi.",
-    },
-    {
-      text: "Jak spustíte Node.js soubor `app.js`?",
-      options: [
-        "`run app.js`",
-        "`node app.js`",
-        "`npm start app.js`",
-        "`js app.js`",
-      ],
-      correct: 1,
-      explanation: "Node.js soubor spustíte příkazem `node app.js`.",
-    },
-    {
-      text: "K čemu slouží `props` v Reactu?",
-      options: [
-        "K uchování stavu komponenty.",
-        "K předávání dat z rodičovské komponenty do dětské.",
-        "K přidávání CSS tříd.",
-        "K ukládání proměnných do localStorage.",
-      ],
-      correct: 1,
-      explanation:
-        "Props slouží k předávání dat a vlastností mezi komponentami v Reactu.",
-    },
-    {
-      text: "K čemu slouží `key` prop při vykreslování seznamů v Reactu?",
-      options: [
-        "Je to CSS třída pro seznam.",
-        "Slouží pro správné sledování změn prvků v seznamu.",
-        "Je to název pole.",
-        "Slouží k vytvoření odkazů.",
-      ],
-      correct: 1,
-      explanation:
-        "Unikátní `key` pomáhá Reactu efektivně identifikovat a aktualizovat prvky v seznamu.",
-    },
-    {
-      text: "Jak vytvoříte nový projekt v Next.js?",
-      options: [
-        "`npx create-next-app@latest`",
-        "`npm install next`",
-        "`next new project`",
-        "`yarn start next`",
-      ],
-      correct: 0,
-      explanation:
-        "Nový projekt se vytváří pomocí příkazu `npx create-next-app@latest`.",
-    },
-    {
-      text: "Co dělá příkaz `npm run dev` v Next.js?",
-      options: [
-        "Spustí produkční build.",
-        "Spustí vývojový server s hot-reloadingem.",
-        "Odinstaluje balíčky.",
-        "Zkompiluje CSS.",
-      ],
-      correct: 1,
-      explanation:
-        "`npm run dev` spustí vývojový server, typicky na http://localhost:3000.",
-    },
-    {
-      text: "K čemu slouží CSS vlastnost `z-index`?",
-      options: [
-        "Určuje velikost textu.",
-        "Určuje pořadí překrývání prvků.",
-        "Určuje rychlost animace.",
-        "Určuje průhlednost prvku.",
-      ],
-      correct: 1,
-      explanation:
-        "`z-index` nastavuje pořadí překrývání prvků – vyšší hodnota = prvek bude navrchu.",
-    },
-    {
-      text: "Jaký je rozdíl mezi `inline` CSS a externím CSS?",
-      options: [
-        "Inline CSS je napsané přímo v atributu prvku, externí je v samostatném souboru.",
-        "Inline CSS je rychlejší, externí je pomalejší.",
-        "Externí CSS funguje jen v Reactu.",
-        "Inline CSS funguje jen v Node.js.",
-      ],
-      correct: 0,
-      explanation:
-        "Inline CSS je napsané přímo v HTML, externí se načítá pomocí `<link>` souboru.",
+        "Axios má `CancelToken` nebo `AbortController` pro zrušení requestu.",
     },
   ])
 );
