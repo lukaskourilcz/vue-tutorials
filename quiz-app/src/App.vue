@@ -109,8 +109,7 @@ const questions = ref(
         "const je jen pro čísla.",
       ],
       correct: 0,
-      explanation:
-        "Používej let a const. var je hoistovaný a má širší scope.",
+      explanation: "Používej let a const. var je hoistovaný a má širší scope.",
     },
     {
       id: 9,
@@ -229,18 +228,6 @@ const questions = ref(
         "React drží Virtual DOM a efektivně synchronizuje změny se skutečným DOMem.",
     },
     {
-      id: 18,
-      text: "Kdy byste použili React.Fragment?",
-      options: [
-        "K seskupení elementů bez extra wrapperu v DOM.",
-        "K vytvoření JSON.",
-        "K inicializaci hooku.",
-        "K vytvoření Redux store.",
-      ],
-      correct: 0,
-      explanation: "<Fragment> nebo <> seskupuje JSX bez dalšího DOM uzlu.",
-    },
-    {
       id: 19,
       text: "Co je controlled komponenta?",
       options: [
@@ -353,8 +340,7 @@ const questions = ref(
         "Hook.",
       ],
       correct: 0,
-      explanation:
-        "HOC = pattern pro znovupoužitelnost logiky komponent.",
+      explanation: "HOC = pattern pro znovupoužitelnost logiky komponent.",
     },
     {
       id: 28,
@@ -392,8 +378,7 @@ const questions = ref(
         "Používá useEffect.",
       ],
       correct: 0,
-      explanation:
-        "Error boundary je class komponenta s componentDidCatch.",
+      explanation: "Error boundary je class komponenta s componentDidCatch.",
     },
     {
       id: 31,
@@ -406,19 +391,6 @@ const questions = ref(
       ],
       correct: 0,
       explanation: "Key musí být unikátní v seznamu prvků.",
-    },
-    {
-      id: 32,
-      text: "Jaký je rozdíl mezi useLayoutEffect a useEffect?",
-      options: [
-        "useLayoutEffect běží synchronně před vykreslením, useEffect po vykreslení.",
-        "Jsou stejné.",
-        "useEffect funguje jen na serveru.",
-        "useLayoutEffect je jen pro Next.js.",
-      ],
-      correct: 0,
-      explanation:
-        "useLayoutEffect umožňuje synchronní běh efektů před paintem.",
     },
 
     // === Next.js & Node.js ===
@@ -547,8 +519,7 @@ const questions = ref(
         "React hook.",
       ],
       correct: 0,
-      explanation:
-        "Redux umožňuje spravovat globální stav a akce v aplikaci.",
+      explanation: "Redux umožňuje spravovat globální stav a akce v aplikaci.",
     },
     {
       id: 43,
@@ -587,30 +558,6 @@ const questions = ref(
       explanation: "SPA (Single Page App) vs. MPA (Multi Page App).",
     },
     {
-      id: 46,
-      text: "Kdy použít useImperativeHandle?",
-      options: [
-        "Pro forwardRef a ovládání dětské komponenty z rodiče.",
-        "Pro Redux.",
-        "Pro fetch.",
-        "Pro animace.",
-      ],
-      correct: 0,
-      explanation: "Používá se s forwardRef pro kontrolu exponovaného API.",
-    },
-    {
-      id: 47,
-      text: "Co je suspense for data fetching?",
-      options: [
-        "Experimentální API pro práci s asynchronními daty v Reactu.",
-        "Redux knihovna.",
-        "CSS knihovna.",
-        "Hook.",
-      ],
-      correct: 0,
-      explanation: "React plánuje Suspense i pro data fetching.",
-    },
-    {
       id: 48,
       text: "K čemu slouží hook useTransition?",
       options: [
@@ -623,43 +570,7 @@ const questions = ref(
       explanation:
         "useTransition je hook pro concurrent rendering a prioritizaci.",
     },
-    {
-      id: 49,
-      text: "Co je batching v Reactu?",
-      options: [
-        "React slučuje více setState volání do jednoho renderu.",
-        "Kompilace CSS.",
-        "Git commit.",
-        "Lazy loading.",
-      ],
-      correct: 0,
-      explanation:
-        "Batching = optimalizace Reactu, aby více setState spustilo jen jeden re-render.",
-    },
-    {
-      id: 50,
-      text: "Jak funguje PureComponent?",
-      options: [
-        "Je class komponenta, která implementuje shallow porovnání props/state.",
-        "Je hook.",
-        "Je JSON metoda.",
-        "Je Git metoda.",
-      ],
-      correct: 0,
-      explanation: "PureComponent optimalizuje class komponenty.",
-    },
-    {
-      id: 51,
-      text: "Co je reconciliation v Reactu?",
-      options: [
-        "Proces porovnávání Virtual DOM s reálným DOM.",
-        "Proces fetchování dat.",
-        "Git merging.",
-        "CSS rendering.",
-      ],
-      correct: 0,
-      explanation: "React porovnává Virtual DOM a minimalizuje změny v DOM.",
-    },
+
     {
       id: 52,
       text: "K čemu slouží hook useId?",
@@ -670,8 +581,7 @@ const questions = ref(
         "Generuje JSON.",
       ],
       correct: 0,
-      explanation:
-        "useId generuje stabilní ID pro HTML atributy (např. aria).",
+      explanation: "useId generuje stabilní ID pro HTML atributy (např. aria).",
     },
     {
       id: 53,
@@ -743,8 +653,7 @@ const questions = ref(
         "Obsahuje CSS.",
       ],
       correct: 0,
-      explanation:
-        "package.json = metadata projektu a seznam závislostí.",
+      explanation: "package.json = metadata projektu a seznam závislostí.",
     },
     {
       id: 59,
@@ -785,27 +694,9 @@ const questions = ref(
     {
       id: 62,
       text: "Jak spustíte dev server v Next.js?",
-      options: [
-        "npm run dev",
-        "node server.js",
-        "git start",
-        "next build",
-      ],
+      options: ["npm run dev", "node server.js", "git start", "next build"],
       correct: 0,
       explanation: "npm run dev spustí vývojový server.",
-    },
-    {
-      id: 63,
-      text: "Co dělá ReactDOM.createRoot?",
-      options: [
-        "Vytváří root pro React 18 concurrent rendering.",
-        "Spouští CSS.",
-        "Načítá JSON.",
-        "Přidává Redux.",
-      ],
-      correct: 0,
-      explanation:
-        "ReactDOM.createRoot = nový root API pro React 18.",
     },
     {
       id: 64,
@@ -817,8 +708,7 @@ const questions = ref(
         "named funguje jen v Node.js.",
       ],
       correct: 0,
-      explanation:
-        "Export default je jeden, named exporty mohou být více.",
+      explanation: "Export default je jeden, named exporty mohou být více.",
     },
     {
       id: 65,
@@ -844,19 +734,7 @@ const questions = ref(
       correct: 0,
       explanation: "filter vrací subset pole.",
     },
-    {
-      id: 67,
-      text: "Co je shallow copy?",
-      options: [
-        "Kopie objektu, která kopíruje reference vnořených objektů.",
-        "Plná hluboká kopie.",
-        "Git metoda.",
-        "React hook.",
-      ],
-      correct: 0,
-      explanation:
-        "Shallow copy kopíruje jen první úroveň objektu.",
-    },
+
     {
       id: 68,
       text: "Co dělá spread operator (...) ?",
@@ -867,8 +745,7 @@ const questions = ref(
         "Spustí Git.",
       ],
       correct: 0,
-      explanation:
-        "Spread (...) rozloží pole/objekt.",
+      explanation: "Spread (...) rozloží pole/objekt.",
     },
     {
       id: 69,
@@ -880,8 +757,7 @@ const questions = ref(
         "Redux metoda.",
       ],
       correct: 0,
-      explanation:
-        "Destrukturalizace = let {x, y} = obj.",
+      explanation: "Destrukturalizace = let {x, y} = obj.",
     },
     {
       id: 70,
@@ -905,8 +781,7 @@ const questions = ref(
         "Redux chaining.",
       ],
       correct: 0,
-      explanation:
-        "Promise chaining = sekvenční zpracování async kroků.",
+      explanation: "Promise chaining = sekvenční zpracování async kroků.",
     },
     {
       id: 72,
@@ -930,8 +805,7 @@ const questions = ref(
         "Spouští CSS.",
       ],
       correct: 0,
-      explanation:
-        "await čeká na promise a vrátí hodnotu.",
+      explanation: "await čeká na promise a vrátí hodnotu.",
     },
     {
       id: 74,
@@ -943,8 +817,7 @@ const questions = ref(
         "Git branch.",
       ],
       correct: 0,
-      explanation:
-        "Modul = oddělený kus kódu exportovaný/importovaný.",
+      explanation: "Modul = oddělený kus kódu exportovaný/importovaný.",
     },
     {
       id: 75,
@@ -968,8 +841,7 @@ const questions = ref(
         "Uloží JSON.",
       ],
       correct: 0,
-      explanation:
-        "npx create-next-app scaffolduje nový Next.js projekt.",
+      explanation: "npx create-next-app scaffolduje nový Next.js projekt.",
     },
     {
       id: 77,
@@ -993,21 +865,7 @@ const questions = ref(
         "CSS animace.",
       ],
       correct: 0,
-      explanation:
-        "Hot reloading zrychluje vývoj.",
-    },
-    {
-      id: 79,
-      text: "Co je shadow DOM?",
-      options: [
-        "Izolovaný DOM strom pro web components.",
-        "React hook.",
-        "Node.js modul.",
-        "Git branch.",
-      ],
-      correct: 0,
-      explanation:
-        "Shadow DOM izoluje styly a logiku v komponentách.",
+      explanation: "Hot reloading zrychluje vývoj.",
     },
     {
       id: 80,
@@ -1019,13 +877,10 @@ const questions = ref(
         "Redux error.",
       ],
       correct: 0,
-      explanation:
-        "Hydration error = nesoulad mezi SSR a klientem.",
+      explanation: "Hydration error = nesoulad mezi SSR a klientem.",
     },
   ])
 );
-
-
 
 const currentIndex = ref(0);
 const score = ref(0);
